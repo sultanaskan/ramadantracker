@@ -12,10 +12,9 @@
             margin: 0;
             padding: 0;
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #f0f4f1 0%, #d9e2d5 100%);
+            background: linear-gradient(135deg, #f0f4f1 0%, #d9e2d5 100% ) ;
             background-attachment: fixed; /* Keeps background still while scrolling */
             color: #2c3e50;
-            min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
@@ -34,6 +33,11 @@
                 padding: 20px;
                 text-align: center;
                 box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+
+                position: sticky;
+                top: 0;
+                z-index: 10000;
+                
             }
 
             header h1 {
@@ -60,15 +64,7 @@
                 color: var(--primary);
             }
 
-            /* Main Container Spacing */
-            main {
-                flex: 1; /* Pushes footer to the bottom */
-                padding: 20px;
-                width: 100%;
-                max-width: 600px; /* Best width for mobile app feel */
-                margin: 0 auto;
-                box-sizing: border-box;
-            }
+          
         </style>
         <h1>🌙 Ramadhan Tracker 2026</h1>
         <nav>
@@ -534,7 +530,7 @@
                 }
 
 
-               
+                
 
               
                 /* Responsive Breakpoints */
