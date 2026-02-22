@@ -338,9 +338,8 @@
             </style>
 
             <div class="glass-card">
-                <div class="card-tag">Current Date</div>
                 <div id="date-container">
-                    <h1 class="today-label">Today is <span id="hijri-day" class="highlight">...</span></h1>
+                    <h1 class="today-label highlight">আজ  <span id="hijri-day" class="highlight">...</span></h1>
                     <p id="full-hijri" class="sub-date"></p>
                 </div>
             </div>
@@ -370,14 +369,14 @@
                 const dayFormatter = new Intl.DateTimeFormat('en-u-ca-islamic-umalqura', {timeZone: 'Asia/Riyadh', 
         day: 'numeric'});
                 const hijriDay = dayFormatter.format(today) - 1;
+                const hijriDayInBangla = new Intl.NumberFormat('bn-BD').format(hijriDay);
 
                // Format for the full string
                 const fullFormatter = new Intl.DateTimeFormat('en-u-ca-islamic-umalqura', options);
-
                 const hijriFull = fullFormatter.format(today);
 
                 //Update your HTML tags
-                document.getElementById('hijri-day').innerHTML = hijriDay + 'th Ramadhan';
+                document.getElementById('hijri-day').innerHTML = hijriDayInBangla + 'তম  তমজান ';
                 document.getElementById('full-hijri').innerHTML = hijriFull;
                 document.getElementById('full-hijri').value = hijriFull;
 
@@ -556,7 +555,7 @@
                 <section class="tracker-card">
                     <div>
                         <label for="toady-gain">আজকের বিশেষ অর্জন</label>
-                        <input type="text" id="today-gain" naem="today-gain" placeholder="আজকে ৫ জন মানুষকে সাহায্য করেছি..." onblur="save( this.id, this.value)">
+                        <input type="text" id="today-gain" name="today-gain" placeholder="আজকে ৫ জন মানুষকে সাহায্য করেছি..." onblur="save( this.id, this.value)">
                     </div>
                 </section>
 
@@ -568,12 +567,12 @@
                             <!--ফরজ-->
                             <div>
                                 <label for="fojor-foroj">ফরজ</label>
-                                <input type="number" id="fojor-foroj" naem="fojor-foroj"  onblur="save( this.id, this.value)">
+                                <input type="number" id="fojor-foroj" name="fojor-foroj"  onblur="save( this.id, this.value)">
                             </div>
                             <!--সুন্নাত-->
                             <div>
                                 <label for="fojor-sunnat">সুন্নত</label>
-                                <input type="number" id="fojor-sunnat" naem="fojor-sunnat"  onblur="save( this.id, this.value)">
+                                <input type="number" id="fojor-sunnat" name="fojor-sunnat"  onblur="save( this.id, this.value)">
                             </div>
                         </section>
 
@@ -583,17 +582,17 @@
                         <section id="zohor-section">
                             <div>
                                 <label for="zohor-foroj">ফরজ</label>
-                                <input type="number" id="zohor-foroj" naem="zohor-foroj"  onblur="save( this.id, this.value)">
+                                <input type="number" id="zohor-foroj" name="zohor-foroj"  onblur="save( this.id, this.value)">
                             </div>
                             <!--সুন্নাত-->
                             <div>
                                 <label for="zohor-sunnat">সুন্নত</label>
-                                <input type="number" id="zohor-sunnat" naem="zohor-sunnat"  onblur="save( this.id, this.value)">
+                                <input type="number" id="zohor-sunnat" name="zohor-sunnat"  onblur="save( this.id, this.value)">
                             </div>
                             <!--নফল-->
                             <div>
                                 <label for="zohor-nofol">নফল</label>
-                                <input type="number" id="zohor-nofol" naem="zohor-nofol"  onblur="save( this.id, this.value)">
+                                <input type="number" id="zohor-nofol" name="zohor-nofol"  onblur="save( this.id, this.value)">
                             </div>
                         </section>
 
@@ -603,17 +602,17 @@
                         <section id="asor-section">
                             <div>
                                 <label for="asor-foroj">ফরজ</label>
-                                <input type="number" id="asor-foroj" naem="asor-foroj"  onblur="save( this.id, this.value)">
+                                <input type="number" id="asor-foroj" name="asor-foroj"  onblur="save( this.id, this.value)">
                             </div>
                             <!--সুন্নাত-->
                             <div>
                                 <label for="asor-sunnat">সুন্নত</label>
-                                <input type="number" id="asor-sunnat" naem="asor-sunnat"  onblur="save( this.id, this.value)">
+                                <input type="number" id="asor-sunnat" name="asor-sunnat"  onblur="save( this.id, this.value)">
                             </div>
                             <!--নফল-->
                             <div>
                                 <label for="asor-nofol">নফল</label>
-                                <input type="number" id="asor-nofol" naem="asor-nofol"  onblur="save( this.id, this.value)">
+                                <input type="number" id="asor-nofol" name="asor-nofol"  onblur="save( this.id, this.value)">
                             </div>
                         </section>
 
@@ -623,17 +622,17 @@
                         <section id="magrib-section">
                             <div>
                                 <label for="magrib-foroj">ফরজ</label>
-                                <input type="number" id="magrib-foroj" naem="magrib-foroj"  onblur="save( this.id, this.value)">
+                                <input type="number" id="magrib-foroj" name="magrib-foroj"  onblur="save( this.id, this.value)">
                             </div>
                             <!--সুন্নাত-->
                             <div>
                                 <label for="magrib-sunnat">সুন্নত</label>
-                                <input type="number" id="magrib-sunnat" naem="magrib-sunnat"  onblur="save( this.id, this.value)">
+                                <input type="number" id="magrib-sunnat" name="magrib-sunnat"  onblur="save( this.id, this.value)">
                             </div>
                             <!--নফল-->
                             <div>
                                 <label for="magrib-nofol">নফল</label>
-                                <input type="number" id="magrib-nofol" naem="magrib-nofol"  onblur="save( this.id, this.value)">
+                                <input type="number" id="magrib-nofol" name="magrib-nofol"  onblur="save( this.id, this.value)">
                             </div>
                         </section>
 
@@ -645,17 +644,17 @@
                         <section id="isha-section">
                             <div>
                                 <label for="isha-foroj">ফরজ</label>
-                                <input type="number" id="isha-foroj" naem="isha-foroj"  onblur="save( this.id, this.value)">
+                                <input type="number" id="isha-foroj" name="isha-foroj"  onblur="save( this.id, this.value)">
                             </div>
                             <!--সুন্নাত-->
                             <div>
                                 <label for="isha-sunnat">সুন্নত</label>
-                                <input type="number" id="isha-sunnat" naem="isha-sunnat"  onblur="save( this.id, this.value)">
+                                <input type="number" id="isha-sunnat" name="isha-sunnat"  onblur="save( this.id, this.value)">
                             </div>
                             <!--নফল-->
                             <div>
                                 <label for="isha-nofol">নফল</label>
-                                <input type="number" id="isha-nofol" naem="isha-nofol"  onblur="save( this.id, this.value)">
+                                <input type="number" id="isha-nofol" name="isha-nofol"  onblur="save( this.id, this.value)">
                             </div>
                         </section>
 
@@ -667,7 +666,7 @@
                             <!--সুন্নাত-->
                             <div>
                                 <label for="tarabih-sunnat">সুন্নত</label>
-                                <input type="number" id="tarabih-sunnat" naem="tarabih-sunnat"  onblur="save( this.id, this.value)">
+                                <input type="number" id="tarabih-sunnat" name="tarabih-sunnat"  onblur="save( this.id, this.value)">
                             </div>
                         </section>
 
@@ -678,7 +677,7 @@
                             <!--সুন্নাত-->
                             <div>
                                 <label for="dhuha-sunnat">সুন্নত</label>
-                                <input type="number" id="dhuha-sunnat" naem="dhuha-sunnat"  onblur="save( this.id, this.value)">
+                                <input type="number" id="dhuha-sunnat" name="dhuha-sunnat"  onblur="save( this.id, this.value)">
                             </div>
                         </section>
 
@@ -690,100 +689,89 @@
                             <!--সুন্নাত-->
                             <div>
                                 <label for="dukhul-sunnat">সুন্নত</label>
-                                <input type="number" id="dukhul-sunnat" naem="dukhul-sunnat"  onblur="save( this.id, this.value)">
+                                <input type="number" id="dukhul-sunnat" name="dukhul-sunnat"  onblur="save( this.id, this.value)">
                             </div>
                         </section>
 
-
-
-
-                        
-
-                        <!--তারাবীহ-->
-                        <div>
-                            <label for="toady-gain">আজকের বিশেষ অর্জন লিখুনঃ</label>
-                            <input type="text" id="today-gain" naem="today-gain" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
-                        </div>
-                        <!--দুহা-->
-                        <div>
-                            <label for="toady-gain">আজকের বিশেষ অর্জন লিখুনঃ</label>
-                            <input type="text" id="today-gain" naem="today-gain" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
-                        </div>
-                        <!--দুখুলুর মসজিদ/ তাহিয়াতুল ওদুদ-->
-                        <div>
-                            <label for="toady-gain">আজকের বিশেষ অর্জন লিখুনঃ</label>
-                            <input type="text" id="today-gain" naem="today-gain" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
-                        </div>
                 </section>
 
                 <!--Quran Tracker-->
+                <h2>কুরআন ট্র্যাকার</h2>
                 <section class="tracker-card">
                     <div>
-                        <label for="toady-gain">আজকের বিশেষ অর্জন লিখুনঃ</label>
-                        <input type="text" id="today-gain" naem="today-gain" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
+                        <label for="toady-ayah">আয়াত</label>
+                        <input type="text" id="today-ayah" name="today-ayah" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
                     </div>
                     <div>
-                        <label for="toady-gain">আজকের বিশেষ অর্জন লিখুনঃ</label>
-                        <input type="text" id="today-gain" naem="today-gain" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
+                        <label for="toady-page">পৃষ্ঠা</label>
+                        <input type="text" id="today-page" name="today-page" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
                     </div>
                     <div>
-                        <label for="toady-gain">আজকের বিশেষ অর্জন লিখুনঃ</label>
-                        <input type="text" id="today-gain" naem="today-gain" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
+                        <label for="toady-para">পারা</label>
+                        <input type="text" id="today-para" name="today-para" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
                     </div>
                 </section>
 
                 <!-- Daily Check List -->
                 <section class="checklist">
                     <div>
-                        <input type="checkbox" id="today-gain" naem="today-gain" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
-                        <label for="toady-gain">আজকের বিশেষ অর্জন লিখুন</label>
+                        <input type="checkbox" id="today-gain" name="today-gain" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
+                        <label for="toady-gain">সকালের যিক্র।</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="today-gain" naem="today-gain" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
-                        <label for="toady-gain">আজকের বিশেষ অর্জন লিখুন</label>
+                        <input type="checkbox" id="today-gain" name="today-gain" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
+                        <label for="toady-gain">সন্ধ্যার যিক্র।</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="today-gain" naem="today-gain" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
-                        <label for="toady-gain">আজকের বিশেষ অর্জন লিখুন</label>
+                        <input type="checkbox" id="today-gain" name="today-gain" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
+                        <label for="toady-gain">দিনের কাজ।</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="today-gain" naem="today-gain" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
-                        <label for="toady-gain">আজকের বিশেষ অর্জন লিখুন</label>
+                        <input type="checkbox" id="today-gain" name="today-gain" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
+                        <label for="toady-gain">কমপক্ষে ৭০ বার ইস্তেগফার।</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="today-gain" naem="today-gain" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
-                        <label for="toady-gain">আজকের বিশেষ অর্জন লিখুন</label>
+                        <input type="checkbox" id="today-gain" name="today-gain" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
+                        <label for="toady-gain">কুরআন তিলাওয়াত ও তাদাব্বুর</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="today-gain" name="today-gain" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
+                        <label for="toady-gain">ঘুমের পূর্বের যিক্র।</label>
+                    </div>
+                     
+                    <div>
+                        <input type="checkbox" id="today-gain" name="today-gain" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
+                        <label for="toady-gain">দিনের দু'আ মুখস্থ।</label>
+                    </div>
+                     <div>
+                        <input type="checkbox" id="today-gain" name="today-gain" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
+                        <label for="toady-gain">আল্লাহর নাম মুখস্থ।</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="today-gain" naem="today-gain" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
-                        <label for="toady-gain">আজকের বিশেষ অর্জন লিখুন</label>
+                        <input type="checkbox" id="today-gain" name="today-gain" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
+                        <label for="toady-gain">জামাআতে সালাত আদায়।</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="today-gain" naem="today-gain" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
-                        <label for="toady-gain">আজকের বিশেষ অর্জন লিখুন</label>
-                    </div>
-                        <div>
-                        <input type="checkbox" id="today-gain" naem="today-gain" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
-                        <label for="toady-gain">আজকের বিশেষ অর্জন লিখুন</label>
+                        <input type="checkbox" id="today-gain" name="today-gain" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
+                        <label for="toady-gain">নতুন কিছু শেখা।</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="today-gain" naem="today-gain" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
-                        <label for="toady-gain">আজকের বিশেষ অর্জন লিখুন</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="today-gain" naem="today-gain" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
-                        <label for="toady-gain">আজকের বিশেষ অর্জন লিখুন</label>
-                    </div>
-                        <div>
-                        <input type="checkbox" id="today-gain" naem="today-gain" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
-                        <label for="toady-gain">আজকের বিশেষ অর্জন লিখুন</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="today-gain" naem="today-gain" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="save( this.id, this.value)">
-                        <label for="toady-gain">আজকের বিশেষ অর্জন লিখুন</label>
+                        <input type="checkbox" id="today-gain" name="today-gain" placeholder="আজলে ১০ জনকে সালাম দিয়েছি..." onblur="saveToLocalhost( this.id, this.value)">
+                        <label for="toady-gain">দিনের হাদীস।</label>
                     </div>
                 </section>
             </div>
+
+
+
+
+            <script>
+                function save(id, data){
+                    console.log(`ID ${id}, data: ${data}`)
+                }
+            </script>
+
         </section>
 
         <!--আল্লাহর নাম সমূহ-->
