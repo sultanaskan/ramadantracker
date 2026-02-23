@@ -23,8 +23,14 @@
             background-repeat: no-repeat;
             background-attachment: fixed; /* Keeps background still while scrolling */
             color: #2c3e50;
+
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+
             display: flex;
             flex-direction: column;
+            box-sizing: border-box; 
         }
         /* Simple Animation */
         @keyframes fadeIn {
@@ -37,15 +43,17 @@
         <style>
             /* Header Styling */
             header {
-                background: white;
-                padding: 20px;
-                text-align: center;
+                flex: 1;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                align-content: center;
+                width: 100%;
+                max-height: 100%;
+                background: rgb(5, 33, 1);
+                padding: 1px;
                 box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-
-                position: sticky;
-                top: 0;
-                z-index: 10000;
-                
             }
 
             header h1 {
@@ -54,105 +62,96 @@
                 margin-bottom: 10px;
             }
 
-            nav {
-                display: flex;
-                justify-content: center;
-                gap: 20px;
-            }
-
-            nav a {
-                text-decoration: none;
-                color: #666;
-                font-weight: 600;
-                font-size: 0.9rem;
-                transition: 0.3s;
-            }
-
-            nav a:hover {
-                color: var(--primary);
-            }
+          
 
           
         </style>
         <h1>🌙 Ramadhan Tracker 2026</h1>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#planner">Planner</a>
-        </nav>
+        <button>Login</button>
+        <button>Logout</button>
     </header>
 
-    <div class="ticker-wrapper">
-        <style>
-            /* 1. The outer container */
-            .ticker-wrapper {
-                width: 100%;
-                overflow: hidden; /* Hides the text when it goes outside the box */
-                background: #fff9c4; /* Light yellow background to grab attention */
-                border-top: 1px solid #fbc02d;
-                border-bottom: 1px solid #fbc02d;
-                white-space: nowrap; /* Prevents text from wrapping to a new line */
-                padding: 10px 0;
-            }
-
-            /* 2. The scrolling element */
-            .ticker-text {
-                display: inline-block;
-                padding-left: 100%; /* Starts the text from the far right */
-                animation: scroll-left 25s linear infinite; /* Adjust '25s' to change speed */
-            }
-
-            .ticker-text h3 {
-                margin: 0;
-                font-size: 1rem;
-                color: #333;
-            }
-
-            /* 3. The Animation Logic */
-            @keyframes scroll-left {
-                0% {
-                    transform: translateX(0);
-                }
-                100% {
-                    transform: translateX(-100%);
-                }
-            }
-
-            /* Optional: Pause scrolling when the user hovers with a mouse */
-            .ticker-wrapper:hover .ticker-text {
-                animation-play-state: paused;
-            }
-        </style>
-        <div class="ticker-text">
-            <h3>
-                <strong>ঘোষণাঃ</strong> এটি একটি ওপেন সোর্স প্রজেক্ট। মুসলিম উম্মার খেদমতে তৈরি হয়েছে। 
-                প্রজেক্টের কাজ এখনো চলমান ৫ই রমজানের মধ্যে ব্যাবহারের জন্য উন্মোক্ত করে দেয়া হবে ইনশাল্লাহ। 
-                এটি ব্যাবহার করে কিভাবে রমজান প্রডাক্টিভ করবেন জানতে 
-                (<a href="#">এখানে ক্লিক করুন।</a>) 
-                <strong>বিঃদ্রঃ</strong> যেহেতু প্রজেক্টি সম্পূর্ন অপেন সোর্স। চাইলে যে কেও নিজের সামার্থ অনুয়ায়ী 
-                এই প্রকল্পে শরিক হতে পারবেন। শরিক থাকতে চাইলে আমাদের সাথে 
-                <a href="https://www.facebook.com/profile.php?id=61556331160348">যোগাযোগ</a> করুন।
-            </h3>
-        </div>
-    </div>
+    
 
 
     <!--Main section --> 
     <main>
+        <div class="ticker-wrapper">
+            <style>
+                /* 1. The outer container */
+                .ticker-wrapper {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    overflow: hidden; /* Hides the text when it goes outside the box */
+                    background: #fff9c4; /* Light yellow background to grab attention */
+                    border-top: 1px solid #fbc02d;
+                    border-bottom: 1px solid #fbc02d;
+                    white-space: nowrap; /* Prevents text from wrapping to a new line */
+                    padding: 10px 0;
+                }
+
+                /* 2. The scrolling element */
+                .ticker-text {
+                    display: inline-block;
+                    font-size: 10px;
+                    padding-left: 100%; /* Starts the text from the far right */
+                    animation: scroll-left 25s linear infinite; /* Adjust '25s' to change speed */
+                }
+
+                .ticker-text h3 {
+                    margin: 0;
+                    color: #333;
+                }
+
+                /* 3. The Animation Logic */
+                @keyframes scroll-left {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    100% {
+                        transform: translateX(-100%);
+                    }
+                }
+
+                /* Optional: Pause scrolling when the user hovers with a mouse */
+                .ticker-wrapper:hover .ticker-text {
+                    animation-play-state: paused;
+                }
+            </style>
+            <div class="ticker-text">
+                <h3>
+                    <strong>ঘোষণাঃ</strong> এটি একটি ওপেন সোর্স প্রজেক্ট। মুসলিম উম্মার খেদমতে তৈরি হয়েছে। 
+                    প্রজেক্টের কাজ এখনো চলমান ৫ই রমজানের মধ্যে ব্যাবহারের জন্য উন্মোক্ত করে দেয়া হবে ইনশাল্লাহ। 
+                    এটি ব্যাবহার করে কিভাবে রমজান প্রডাক্টিভ করবেন জানতে 
+                    (<a href="#">এখানে ক্লিক করুন।</a>) 
+                    <strong>বিঃদ্রঃ</strong> যেহেতু প্রজেক্টি সম্পূর্ন অপেন সোর্স। চাইলে যে কেও নিজের সামার্থ অনুয়ায়ী 
+                    এই প্রকল্পে শরিক হতে পারবেন। শরিক থাকতে চাইলে আমাদের সাথে 
+                    <a href="https://www.facebook.com/profile.php?id=61556331160348">যোগাযোগ</a> করুন।
+                </h3>
+            </div>
+        </div>
         <style>
             /* মেইন কন্টেইনার */
             main {
-                margin: 0 auto;
-                padding: 15px;
+                flex:8;
                 display: flex;
                 flex-direction: column;
-                gap: 25px;
-                perspective: 1000px; /* অ্যানিমেশনের গভীরতার জন্য */
+                justify-content: space-around;
+                align-items: center;
+                width: 100%;
+                max-width: 100%;
+                padding: 1px;
+                overflow: hidden;/* অ্যানিমেশনের গভীরতার জন্য */
             }
 
             /* কমন কার্ড স্টাইল (সব সেকশনের জন্য) */
             section {
-                background: rgba(255, 255, 255, 0.9);
-                backdrop-filter: blur(10px);
+                background: rgb(163, 255, 161);
+                backdrop-filter: blur(100px);
                 border-radius: 25px;
                 padding: 20px;
                 border: 1px solid rgba(255, 255, 255, 0.4);
@@ -163,12 +162,12 @@
 
             /* অ্যানিমেশন ডিলে (একটার পর একটা আসবে) */
             section:nth-child(1) { animation-delay: 0.1s; }
-            section:nth-child(2) { animation-delay: 0.3s; }
-            section:nth-child(3) { animation-delay: 0.5s; }
-            section:nth-child(4) { animation-delay: 0.7s; }
+            section:nth-child(2) { animation-delay: 0.2s; }
+            section:nth-child(3) { animation-delay: 0.3s; }
+            section:nth-child(4) { animation-delay: 0.4s; }
 
             @keyframes slideUp {
-                from { transform: translateY(30px); opacity: 0; }
+                from { transform: translateX(100px); opacity: 0; }
                 to { transform: translateY(0); opacity: 1; }
             }
 
@@ -252,22 +251,23 @@
                 }
 
                 .ramadhan-widget {
+                    flex: 2 ;
                     display: flex;
                     flex-direction: row;
                     align-content: center;
                     justify-content: center ;
-                    padding: 20px;
-                    max-width: 1000px;
-                    height: 300px;
-                    background: linear-gradient(135deg, rgba(240, 244, 241, 0.5) 0%, rgba(217, 226, 213, 0.5) 100%), 
+                    align-items: center;
+                    background: linear-gradient(135deg, rgba(21, 104, 42, 0.376) 0%, rgba(40, 123, 4, 0.5) 100%), 
                     url('/public/static_files/image/hero-banner.jpg');
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    aspect-ratio: 20/2;
                     }
 
                 .glass-card {
                     background: var(--glass);
                     backdrop-filter: blur(10px);
                     border-radius: 100%;
-                    padding: 30px;
                     aspect-ratio: 1/1;
                     text-align: center;
                     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
@@ -276,16 +276,13 @@
                 }
 
                 .card-tag {
-                    font-size: 10px;
-                    text-transform: uppercase;
                     letter-spacing: 2px;
                     color: var(--primary);
-                    font-weight: 700;
                     margin-bottom: 10px;
                 }
 
                 .today-label {
-                    font-size: 1.5rem;
+                   
                     color: #333;
                     margin: 0;
                 }
@@ -293,8 +290,6 @@
                 .highlight {
                     color: var(--primary);
                     display: block;
-                    font-size: 2.5rem;
-                    font-weight: 800;
                 }
 
                 .sub-date {
@@ -303,50 +298,14 @@
                     font-size: 0.9rem;
                 }
 
-                /* Day Slider Styling */
-                .day-slider {
-                    display: flex;
-                    overflow-x: auto;
-                    gap: 12px;
-                    padding: 10px 0;
-                    scrollbar-width: none; /* Hide scrollbar for Firefox */
-                }
-
-                .day-slider::-webkit-scrollbar { display: none; } /* Hide for Chrome */
-
-                .day-item {
-                    min-width: 60px;
-                    height: 70px;
-                    background: white;
-                    border-radius: 15px;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-                    transition: 0.3s;
-                    color: #999;
-                }
-
-                .day-item.active {
-                    background: var(--primary);
-                    color: white;
-                    transform: scale(1.1);
-                    box-shadow: 0 8px 20px rgba(46, 125, 50, 0.3);
-                }
-
-                .day-item span { font-size: 10px; text-transform: uppercase; }
-                .day-item b { font-size: 1.2rem; }
-
+               
 
                 /* Mobile Responsiveness */
                 @media (max-width: 480px) {
                     .ramadhan-widget {
-                        padding: 10px;
-                        margin: 20px auto;
                     }
                     .highlight {
-                        font-size: 2rem;
+                        font-size: 1rem;
                     }
                 }
             </style>
@@ -401,6 +360,7 @@
         <section class="daily-inspiration">
             <style>/* Container for all cards */
                 .daily-inspiration {
+                    flex: 3;
                     display: grid;
                     grid-template-columns: 1fr; /* Single column on mobile */
                     gap: 20px;
@@ -556,7 +516,7 @@
             <style>
                 /* কন্টেইনার স্টাইল */
                 .user-tracker-container {
-                    padding: 20px 0;
+                    flex:3;
                 }
 
               
@@ -564,16 +524,13 @@
                 /* গ্রিড লজিক (The Magic Part) */
                 .tracker-grid {
                     display: grid;
-                    gap: 20px;
                     /* মোবাইল স্ক্রিনে ১টি কলাম */
-                    grid-template-columns: 1fr; 
                 }
 
                 /* কার্ড স্টাইল */
                 .tracker-card {
                     background: #ffffff;
                     border-radius: 20px;
-                    padding: 20px;
                     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
                     border-top: 4px solid var(--primary);
                     transition: transform 0.3s ease;
@@ -817,7 +774,12 @@
         </section>
 
         <!--আল্লাহর নাম সমূহ-->
-        <section>
+        <section class="names-of-allah">
+            <style>
+                .names-of-allah{
+                    flex: 1
+                }
+            </style>
             <div>
                 <h1>আল্লাহর নাম</h1>
             </div>
@@ -912,10 +874,16 @@
         <style>
             /* Footer Styling */
             footer {
-                background: white;
-                padding: 20px;
+                flex: 0.6;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                width: 100%;
+                height: 1px;
+                background: rgb(0, 50, 6);
+                padding: 1px ;
                 text-align: center;
-                font-size: 0.8rem;
                 color: #888;
                 border-top: 1px solid rgba(0,0,0,0.05);
             }
