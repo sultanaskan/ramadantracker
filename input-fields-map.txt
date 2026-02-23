@@ -1,0 +1,50 @@
+input fields info:
+// true/false using checkbox
+1= diner-ayat,
+2= diner-hadis,
+3= diner-doa,
+4= diner-kaj,
+
+//text using input
+5= ajoker-orjon,
+
+//number using input
+6= fojor-foroj,
+7= fojor-sunnat,
+8= zohor-foroj,
+9= zohor-sunnat,
+10= zohor-nojol,
+11= asor-foroj,
+12= asor-sunnat,
+13= magrib-foroj,
+14= magrib-sunnat,
+15= magrib-nofol,
+16= isha-foroj,
+17= isha-sunnat,
+18= isha-nofol,
+19= tarabi-sunnat,
+20=  duha-sunnat,
+21= dukhulul-mosojid-sunnat,
+
+
+// true/false using check box
+22= quran-ayat,
+23= quran-page,
+24= quran-para,
+25= sokal-zikr,
+26= sondha-zikr,
+27= dan-sadaka,
+28= diner-kaj,
+29= 70-bar-sitegfar,
+30= quran-tilawyat-w-tdabbur,
+31= ghumer-purrber-zikr,
+32= diner-doa-mokhost,
+33= allahor-nam-mukhost,
+34=  jamate-salat-aday,
+35= notun-kichu-shekha,
+36= diner-hadis,
+
+true-false using checkbox
+37= allahor-name-one,
+38= allahor-name-two,
+39= allahor-name-three
