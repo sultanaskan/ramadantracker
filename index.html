@@ -32,6 +32,41 @@
             flex-direction: column;
             box-sizing: border-box; 
         }
+        /* Header Styling */
+        header {
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            align-content: center;
+            background: rgb(5, 33, 1);
+            overflow: hidden;
+            min-height: 0;
+        }
+
+        /* */
+        main {
+            flex:18;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            overflow: hidden;/* অ্যানিমেশনের গভীরতার জন্য */
+            box-sizing: content-box;
+            }
+
+    /* Footer Styling */
+        footer {
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            background: rgb(0, 50, 6);
+            color: #888;
+            overflow: hidden;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }   
         /* Simple Animation */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
@@ -41,25 +76,11 @@
     <!--Head-->
     <header>
         <style>
-            /* Header Styling */
-            header {
-                flex: 1;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-around;
-                align-items: center;
-                align-content: center;
-                width: 100%;
-                max-height: 100%;
-                background: rgb(5, 33, 1);
-                padding: 1px;
-                box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-            }
+         
 
             header h1 {
-                font-size: 1.4rem;
+                font-size: 1rem;
                 color: var(--primary);
-                margin-bottom: 10px;
             }
 
           
@@ -76,11 +97,85 @@
 
     <!--Main section --> 
     <main>
-        <div class="ticker-wrapper">
+        <style>
+            /* মেইন কন্টেইনার */
+              
+
+                /* কমন কার্ড স্টাইল (সব সেকশনের জন্য) */
+                section {
+                    margin: 0.05rem;
+                    padding: 0.05rem 0.05rem;
+                    background: rgb(163, 255, 161);
+                    backdrop-filter: blur(10                            px);
+                    border-radius: 25px;
+                    border: 1px solid rgba(255, 255, 255, 0.4);
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+                    animation: slideUp 0.6s ease-out forwards;
+                    opacity: 0;
+                    display: flex;
+                    align-items: center;
+                    align-content: center;
+                    justify-content: center;
+
+                    
+  }
+
+                /* অ্যানিমেশন ডিলে (একটার পর একটা আসবে) */
+                section:nth-child(1) { 
+                        animation-delay: 0.1s;
+                        overflow: hidden; 
+                        flex: 0.1; 
+                        display: flex;
+                        flex-direction: row;
+                        align-content: center;
+                        justify-content: center ;
+                        align-items: center;
+                        overflow: hidden;
+                    }
+                section:nth-child(2) { 
+                    animation-delay: 0.2s; 
+                    overflow: hidden; 
+                    flex: 0.1;
+                    
+                     
+                }
+                section:nth-child(3) { 
+                    animation-delay: 0.3s; 
+                    overflow: hidden; 
+                    flex: 3;
+                    background: linear-gradient(135deg, rgba(21, 104, 42, 0.376) 0%, rgba(40, 123, 4, 0.5) 100%), 
+                        url('/public/static_files/image/hero-banner.jpg');
+                }
+                section:nth-child(4) { 
+                    animation-delay: 0.4s; 
+                    overflow: hidden; 
+                    flex: 5;
+                }
+                section:nth-child(5) { 
+                    animation-delay: 0.5s; 
+                    overflow: hidden; 
+                    flex: 8; 
+                }
+                   section:nth-child(6) { 
+                    animation-delay: 0.5s; 
+                    overflow: hidden; 
+                    flex: 2; 
+                }
+              
+
+                @keyframes slideUp {
+                    from { transform: translateX(100px); opacity: 0; }
+                    to { transform: translateY(0); opacity: 1; }
+                }
+
+         
+          
+        </style>
+        <section class="ticker-wrapper">
             <style>
                 /* 1. The outer container */
                 .ticker-wrapper {
-                    flex: 1;
+                    flex-direction: row;
                     display: flex;
                     flex-direction: row;
                     justify-content: center;
@@ -133,114 +228,8 @@
                     <a href="https://www.facebook.com/profile.php?id=61556331160348">যোগাযোগ</a> করুন।
                 </h3>
             </div>
-        </div>
-        <style>
-            /* মেইন কন্টেইনার */
-            main {
-                flex:8;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-                align-items: center;
-                width: 100%;
-                max-width: 100%;
-                padding: 1px;
-                overflow: hidden;/* অ্যানিমেশনের গভীরতার জন্য */
-            }
-
-            /* কমন কার্ড স্টাইল (সব সেকশনের জন্য) */
-            section {
-                background: rgb(163, 255, 161);
-                backdrop-filter: blur(100px);
-                border-radius: 25px;
-                padding: 20px;
-                border: 1px solid rgba(255, 255, 255, 0.4);
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-                animation: slideUp 0.6s ease-out forwards;
-                opacity: 0;
-            }
-
-            /* অ্যানিমেশন ডিলে (একটার পর একটা আসবে) */
-            section:nth-child(1) { animation-delay: 0.1s; }
-            section:nth-child(2) { animation-delay: 0.2s; }
-            section:nth-child(3) { animation-delay: 0.3s; }
-            section:nth-child(4) { animation-delay: 0.4s; }
-
-            @keyframes slideUp {
-                from { transform: translateX(100px); opacity: 0; }
-                to { transform: translateY(0); opacity: 1; }
-            }
-
-            /* সেকশন হেডার */
-            section h2, .section-title {
-                color: var(--primary);
-                font-size: 1.1rem;
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                margin-bottom: 20px;
-                border-bottom: 1px dashed #ddd;
-                padding-bottom: 10px;
-            }
-
-            /* আল্লাহর নাম সেকশন ডিজাইন */
-            .names-container {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-                gap: 12px;
-            }
-
-            .allah-name-card {
-                background: linear-gradient(145deg, #ffffff, #f0f4f1);
-                border: 1px solid var(--accent);
-                padding: 15px;
-                border-radius: 15px;
-                text-align: center;
-                transition: 0.3s;
-            }
-
-            .allah-name-card:hover {
-                transform: scale(1.05);
-                background: var(--primary);
-            }
-
-            .allah-name-card:hover p { color: white; }
-
-            .arabic-name {
-                font-family: 'Amiri', serif;
-                font-size: 1.6rem;
-                color: var(--primary);
-                margin: 0;
-            }
-
-            .bangla-name {
-                font-size: 0.8rem;
-                color: #666;
-                margin-top: 5px;
-            }
-
-            /* ইনপুট ফিল্ড কাস্টমাইজেশন */
-            input[type="text"] {
-                width: 100%;
-                padding: 12px 15px;
-                border-radius: 12px;
-                border: 1.5px solid #e0e0e0;
-                background: #fdfdfd;
-                transition: 0.3s;
-            }
-
-            input[type="text"]:focus {
-                border-color: var(--primary);
-                box-shadow: 0 0 10px rgba(46, 125, 50, 0.1);
-                outline: none;
-            }
-
-            /* রেসপনসিভ টাচ-আপ */
-            @media (max-width: 480px) {
-                main { padding: 10px; gap: 15px; }
-                .arabic-name { font-size: 1.3rem; }
-            }
-        </style>
+        </section>
+   
         <!--Day slider (Today of ramadhan  show in center by default)-->
         <section class="ramadhan-widget">
             <style>
@@ -248,65 +237,6 @@
                     --primary: #2e7d32;
                     --accent: #ffd700;
                     --glass: rgba(255, 255, 255, 0.9);
-                }
-
-                .ramadhan-widget {
-                    flex: 2 ;
-                    display: flex;
-                    flex-direction: row;
-                    align-content: center;
-                    justify-content: center ;
-                    align-items: center;
-                    background: linear-gradient(135deg, rgba(21, 104, 42, 0.376) 0%, rgba(40, 123, 4, 0.5) 100%), 
-                    url('/public/static_files/image/hero-banner.jpg');
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                    aspect-ratio: 20/2;
-                    }
-
-                .glass-card {
-                    background: var(--glass);
-                    backdrop-filter: blur(10px);
-                    border-radius: 100%;
-                    aspect-ratio: 1/1;
-                    text-align: center;
-                    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-                    border: 1px solid rgba(255,255,255,0.3);
-                    margin-bottom: 25px;
-                }
-
-                .card-tag {
-                    letter-spacing: 2px;
-                    color: var(--primary);
-                    margin-bottom: 10px;
-                }
-
-                .today-label {
-                   
-                    color: #333;
-                    margin: 0;
-                }
-
-                .highlight {
-                    color: var(--primary);
-                    display: block;
-                }
-
-                .sub-date {
-                    color: #666;
-                    margin-top: 10px;
-                    font-size: 0.9rem;
-                }
-
-               
-
-                /* Mobile Responsiveness */
-                @media (max-width: 480px) {
-                    .ramadhan-widget {
-                    }
-                    .highlight {
-                        font-size: 1rem;
-                    }
                 }
             </style>
 
@@ -320,6 +250,10 @@
             <div class="day-slider">
                 <div class="slider-track" id="slider-track">
                     </div>
+            </div>
+
+            <div class="">
+
             </div>
           
             
@@ -359,112 +293,6 @@
         <!--Static Data for this day-->
         <section class="daily-inspiration">
             <style>/* Container for all cards */
-                .daily-inspiration {
-                    flex: 3;
-                    display: grid;
-                    grid-template-columns: 1fr; /* Single column on mobile */
-                    gap: 20px;
-                    margin-top: 30px;
-                }
-
-                /* Individual Card Styling */
-                .info-card {
-                    display: flex;
-                    flex-direction: column;
-                    background: white;
-                    padding: 25px;
-                    border-radius: 20px;
-                    position: relative;
-                    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-                    border-left: 5px solid var(--primary); /* Emerald Green accent */
-                    transition: transform 0.3s ease;
-                    overflow: hidden;
-                }
-
-                .info-card:hover {
-                    transform: translateY(-5px);
-                }
-
-                /* Watermark background icon effect */
-                .card-icon {
-                    position: absolute;
-                    left: 50px;
-                    font-size: 10rem;
-                    opacity: 0.1;
-                    pointer-events: none;
-                }
-
-                .info-card h2 {
-                    font-size: 1.1rem;
-                    color: var(--primary);
-                    margin-top: 0;
-                    margin-bottom: 15px;
-                    display: flex;
-                    align-items: center;
-                    gap: 10px;
-                }
-
-                /* Arabic Typography Styling */
-                .arabic-text {
-                    font-family: 'Amiri', serif; /* Use a beautiful Arabic font */
-                    font-size: 2rem;
-                    line-height: 2;
-                    text-align: center;
-                    direction: rtl;
-                    color: #333;
-                    margin-bottom: 15px;
-                }
-
-                /* Translation Styling */
-                .translation {
-                    font-size: 2rem;
-                    font-weight: bold;
-                    text-align: center;
-                    color: #555;
-                    line-height: 1.6;
-                    border-top: 1px solid #f0f0f0;
-                    padding-top: 15px;
-                    font-style: normal;
-                }
-
-                .deed-text {
-                    font-weight: 600;
-                    color: #444;
-                    text-align: center;
-                    padding: 10px;
-                    background: #f0f7f0;
-                    border-radius: 10px;
-                }
-
-                /* Gold accent for certain cards */
-                .dua-theme {
-                    border-left-color: #d4af37; /* Gold color */
-                }
-
-                .checkbox-container {
-                        display: flex;         /* একই লাইনে আনার জন্য */
-                        align-items: center;    /* উপরে-নিচে মাঝখানে রাখার জন্য */
-                        justify-content: center; /* সেন্টারে রাখার জন্য (আপনার text-align: center এর কাজ করবে) */
-                        gap: 10px;             /* বক্স এবং লেখার মাঝে সুন্দর দূরত্ব */
-                        margin: 10px 0;
-                    }
-
-                    .checkbox-container label {
-                        cursor: pointer;        /* মাউস নিলে হাতের চিহ্ন দেখাবে */
-                        font-weight: 600;       /* আপনি আগেরবার বোল্ড করতে চেয়েছিলেন */
-                    }
-
-                    .checkbox-container input[type="checkbox"] {
-                        width: 18px;            /* বক্সটি একটু বড় দেখাবে */
-                        height: 18px;
-                        cursor: pointer;
-                }
-                /* Responsive Grid for Tablets/Desktops */
-                @media (min-width: 768px) {
-                    .daily-inspiration {
-                        grid-template-columns: 1fr 1fr; /* Two columns on larger screens */
-                    }
-                }
             </style>
             <article class="info-card ayah-theme">
                 <div class="card-icon">📖</div>
@@ -513,49 +341,7 @@
 
         <!--Dynamic User generated data fields this today-->
         <section class="user-traker-container">
-            <style>
-                /* কন্টেইনার স্টাইল */
-                .user-tracker-container {
-                    flex:3;
-                }
-
-              
-
-                /* গ্রিড লজিক (The Magic Part) */
-                .tracker-grid {
-                    display: grid;
-                    /* মোবাইল স্ক্রিনে ১টি কলাম */
-                }
-
-                /* কার্ড স্টাইল */
-                .tracker-card {
-                    background: #ffffff;
-                    border-radius: 20px;
-                    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-                    border-top: 4px solid var(--primary);
-                    transition: transform 0.3s ease;
-                }
-
-
-                
-
-              
-                /* Responsive Breakpoints */
-
-                /* Medium Screen (Tablet): ২ টি করে কার্ড প্রতি সারিতে (২টি সারি হবে মোট ৪টি কার্ডের জন্য) */
-                @media (min-width: 600px) {
-                    .tracker-grid {
-                        grid-template-columns: repeat(2, 1fr);
-                    }
-                }
-
-                /* Large Screen (Desktop): ১ টি সারিতে ৪টি কার্ড */
-                @media (min-width: 1024px) {
-                    .tracker-grid {
-                        grid-template-columns: repeat(4, 1fr);
-                    }
-                }
-            </style>
+            <style></style>
             <h2 class="main-title">📊 আপনার আজকের অগ্রগতি</h2>
             <div class="tracker-grid"></div>
 
@@ -777,7 +563,6 @@
         <section class="names-of-allah">
             <style>
                 .names-of-allah{
-                    flex: 1
                 }
             </style>
             <div>
@@ -872,21 +657,7 @@
     <!--Footer section -->
    <footer>
         <style>
-            /* Footer Styling */
-            footer {
-                flex: 0.6;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-around;
-                align-items: center;
-                width: 100%;
-                height: 1px;
-                background: rgb(0, 50, 6);
-                padding: 1px ;
-                text-align: center;
-                color: #888;
-                border-top: 1px solid rgba(0,0,0,0.05);
-            }
+          
 
             footer a {
                 color: var(--primary);
