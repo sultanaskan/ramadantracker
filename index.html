@@ -5,303 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="public/static_files/image/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <link rel="stylesheet" href="public/static_files/css/index.css">
+    <title>Ramadhan Tracker 2026</title>
 </head>
+
 <body>
-    
-
-
-    <style>/* Modern Reset & Body Styling */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Hind Siliguri',  'Poppins', sans-serif;
-            background: linear-gradient(135deg, rgba(240, 244, 241, 0.5) 0%, rgba(217, 226, 213, 0.5) 100%), 
-                url('/public/static_files/image/background-image.jpg'); /* এখানে আপনার ইমেজের লিঙ্ক দিন */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed; /* Keeps background still while scrolling */
-            color: #2c3e50;
-
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
-
-            display: flex;
-            flex-direction: column;
-            box-sizing: border-box; 
-        }
-        /* Header Styling */
-        header {
-            flex: 1;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            align-items: center;
-            align-content: center;
-            background: rgb(5, 33, 1);
-            overflow: hidden;
-            min-height: 0;
-        }
-
-        /* */
-        main {
-            flex:18;
-            display: flex;
-            flex-direction: column;
-            align-content: center;
-            overflow: hidden;/* অ্যানিমেশনের গভীরতার জন্য */
-            box-sizing: content-box;
-            }
-
-    /* Footer Styling */
-        footer {
-            flex: 1;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            align-items: center;
-            background: rgb(0, 50, 6);
-            color: #888;
-            overflow: hidden;
-            border-top: 1px solid rgba(0,0,0,0.05);
-        }   
-        /* Simple Animation */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
-    <!--Head-->
     <header>
-        <style>
-         
-
-            header h1 {
-                font-size: 1rem;
-                color: var(--primary);
-            }
-
-          
-
-          
-        </style>
-        <h1>🌙 Ramadhan Tracker 2026</h1>
-        <button>Login</button>
-        <button>Logout</button>
+        <h3>🌙 Ramadhan Tracker 2026</h3>
+        <div class="auth-buttons">
+            <button>Login</button>
+            <button>Logout</button>
+        </div>
     </header>
 
-    
-
-
-    <!--Main section --> 
-    <main>
-        <style>
-            /* মেইন কন্টেইনার */
-              
-
-                /* কমন কার্ড স্টাইল (সব সেকশনের জন্য) */
-                section {
-                    margin: 0.05rem;
-                    padding: 0.05rem 0.05rem;
-                    background: rgb(163, 255, 161);
-                    backdrop-filter: blur(10                            px);
-                    border-radius: 25px;
-                    border: 1px solid rgba(255, 255, 255, 0.4);
-                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-                    animation: slideUp 0.6s ease-out forwards;
-                    opacity: 0;
-                    display: flex;
-                    align-items: center;
-                    align-content: center;
-                    justify-content: center;
-
-                    
-  }
-
-                /* অ্যানিমেশন ডিলে (একটার পর একটা আসবে) */
-                section:nth-child(1) { 
-                        animation-delay: 0.1s;
-                        overflow: hidden; 
-                        flex: 0.1; 
-                        display: flex;
-                        flex-direction: row;
-                        align-content: center;
-                        justify-content: center ;
-                        align-items: center;
-                        overflow: hidden;
-                    }
-                section:nth-child(2) { 
-                    animation-delay: 0.2s; 
-                    overflow: hidden; 
-                    flex: 0.1;
-                    
-                     
-                }
-                section:nth-child(3) { 
-                    animation-delay: 0.3s; 
-                    overflow: hidden; 
-                    flex: 3;
-                    background: linear-gradient(135deg, rgba(21, 104, 42, 0.376) 0%, rgba(40, 123, 4, 0.5) 100%), 
-                        url('/public/static_files/image/hero-banner.jpg');
-                }
-                section:nth-child(4) { 
-                    animation-delay: 0.4s; 
-                    overflow: hidden; 
-                    flex: 5;
-                }
-                section:nth-child(5) { 
-                    animation-delay: 0.5s; 
-                    overflow: hidden; 
-                    flex: 8; 
-                }
-                   section:nth-child(6) { 
-                    animation-delay: 0.5s; 
-                    overflow: hidden; 
-                    flex: 2; 
-                }
-              
-
-                @keyframes slideUp {
-                    from { transform: translateX(100px); opacity: 0; }
-                    to { transform: translateY(0); opacity: 1; }
-                }
-
-         
-          
-        </style>
-        <section class="ticker-wrapper">
-            <style>
-                /* 1. The outer container */
-                .ticker-wrapper {
-                    flex-direction: row;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                    align-items: center;
-                    width: 100%;
-                    overflow: hidden; /* Hides the text when it goes outside the box */
-                    background: #fff9c4; /* Light yellow background to grab attention */
-                    border-top: 1px solid #fbc02d;
-                    border-bottom: 1px solid #fbc02d;
-                    white-space: nowrap; /* Prevents text from wrapping to a new line */
-                    padding: 10px 0;
-                }
-
-                /* 2. The scrolling element */
-                .ticker-text {
-                    display: inline-block;
-                    font-size: 10px;
-                    padding-left: 100%; /* Starts the text from the far right */
-                    animation: scroll-left 25s linear infinite; /* Adjust '25s' to change speed */
-                }
-
-                .ticker-text h3 {
-                    margin: 0;
-                    color: #333;
-                }
-
-                /* 3. The Animation Logic */
-                @keyframes scroll-left {
-                    0% {
-                        transform: translateX(0);
-                    }
-                    100% {
-                        transform: translateX(-100%);
-                    }
-                }
-
-                /* Optional: Pause scrolling when the user hovers with a mouse */
-                .ticker-wrapper:hover .ticker-text {
-                    animation-play-state: paused;
-                }
-            </style>
-            <div class="ticker-text">
-                <h3>
-                    <strong>ঘোষণাঃ</strong> এটি একটি ওপেন সোর্স প্রজেক্ট। মুসলিম উম্মার খেদমতে তৈরি হয়েছে। 
-                    প্রজেক্টের কাজ এখনো চলমান ৫ই রমজানের মধ্যে ব্যাবহারের জন্য উন্মোক্ত করে দেয়া হবে ইনশাল্লাহ। 
-                    এটি ব্যাবহার করে কিভাবে রমজান প্রডাক্টিভ করবেন জানতে 
-                    (<a href="#">এখানে ক্লিক করুন।</a>) 
-                    <strong>বিঃদ্রঃ</strong> যেহেতু প্রজেক্টি সম্পূর্ন অপেন সোর্স। চাইলে যে কেও নিজের সামার্থ অনুয়ায়ী 
-                    এই প্রকল্পে শরিক হতে পারবেন। শরিক থাকতে চাইলে আমাদের সাথে 
-                    <a href="https://www.facebook.com/profile.php?id=61556331160348">যোগাযোগ</a> করুন।
-                </h3>
-            </div>
+    <main>                         
+        <section class="ticker-wrapper" id="ticker-wapper">
+            <h3 class="ticker-text">
+                <strong>ঘোষণাঃ</strong> এটি একটি ওপেন সোর্স প্রজেক্ট। মুসলিম উম্মার খেদমতে তৈরি হয়েছে। 
+                প্রজেক্টের কাজ এখনো চলমান ৫ই রমজানের মধ্যে ব্যাবহারের জন্য উন্মোক্ত করে দেয়া হবে ইনশাল্লাহ। 
+                এটি ব্যাবহার করে কিভাবে রমজান প্রডাক্টিভ করবেন জানতে 
+                (<a href="#">এখানে ক্লিক করুন।</a>) 
+                <strong>বিঃদ্রঃ</strong> চাইলে যে কেউ নিজের সামর্থ্য অনুযায়ী এই প্রকল্পে শরিক হতে পারবেন। 
+                <a href="https://www.facebook.com/profile.php?id=61556331160348">যোগাযোগ</a> করুন।
+            </h3>
         </section>
-   
-        <!--Day slider (Today of ramadhan  show in center by default)-->
-        <section class="ramadhan-widget">
-            <style>
-                :root {
-                    --primary: #2e7d32;
-                    --accent: #ffd700;
-                    --glass: rgba(255, 255, 255, 0.9);
-                }
-            </style>
 
-            <div class="glass-card">
-                <div id="date-container">
-                    <h1 class="today-label highlight">আজ  <span id="hijri-day" class="highlight">...</span></h1>
-                    <p id="full-hijri" class="sub-date"></p>
-                </div>
+        <section class="ramadhan-widget" id="ramadhan-widget">
+            <div>
+                <h2>সেহেরির শেষ সময়</h2>
+                <p>ভোর ৪ টা ৪০ মিনিটে</p>
             </div>
-
-            <div class="day-slider">
-                <div class="slider-track" id="slider-track">
-                    </div>
+            <div>
+                <h2>আজ <span id="hijri-day" class="highlight">...</span></h2>
+                <span id="full-hijri" class="sub-date"></span>
             </div>
-
-            <div class="">
-
+            <div>
+                <h2>ইফতারের শেষ সময়</h2>
+                <p>সন্ধ্যা ৪ টা ৪০ মিনিটে</p>
             </div>
-          
-            
-            <script>
-                //This creates Hijri Date based on the current system time
-                const today = new Date();
-                 const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
-                // Define options to force the Saudi Arabia timezone
-                const options = {
-                    timeZone: 'Asia/Riyadh',
-                    calendar: 'islamic-umalqura',
-                    day: 'numeric',
-                    month: 'long',
-                    year: 'numeric'
-                }
-                
-                
-               // Format for the day number only
-                const dayFormatter = new Intl.DateTimeFormat('en-u-ca-islamic-umalqura', {timeZone: 'Asia/Riyadh',  day: 'numeric'});
-                const hijriDay = dayFormatter.format(today) - 1;
-                const hijriDayInBangla = new Intl.NumberFormat('bn-BD').format(hijriDay);
-
-               // Format for the full string
-                const fullFormatter = new Intl.DateTimeFormat('en-u-ca-islamic-umalqura', options);
-                const hijriFull = fullFormatter.format(today);
-
-                //Update your HTML tags
-                document.getElementById('hijri-day').innerHTML = hijriDayInBangla + 'তম  রমজান ';
-                document.getElementById('full-hijri').innerHTML = hijriFull;
-                document.getElementById('full-hijri').value = hijriFull;
-
-                console.log(`today: ${today} \n hijriDay: ${hijriDay } \n DayFormater: ${JSON.stringify(dayFormatter)} \n fullFormater: ${ JSON.stringify(fullFormatter)} \n User Time Zone: ${userTimeZone}`);
-            </script>
         </section> 
 
-        <!--Static Data for this day-->
         <section class="daily-inspiration">
-            <style>/* Container for all cards */
-            </style>
             <article class="info-card ayah-theme">
                 <div class="card-icon">📖</div>
-                <h2>আজকের আয়াত</h2>
-                <p class="arabic-text">يَا أَيُّهَا الَّذِينَ آمَنُوا كُتِبَ عَلَيْكُمُ الصِّيَامُ</p>
-                <p class="translation">হে ঈমানদারগণ, তোমাদের উপর রোজা ফরয করা হয়েছে।</p>
-               
+                <h2>আজকের আয়াত</h2>
+                <p class="arabic-text">يَا أَيُّهَا الَّذِينَ آمَنُوا كُتِبَ عَلَيْكُمُ الصِّيَامُ</p>
+                <p class="translation">হে ঈমানদারগণ, তোমাদের উপর রোজা ফরয করা হয়েছে।</p>
                 <div class="checkbox-container">
-                    <input type="checkbox" name="input1" id="input1" onchange="save( this.id, this.checked, myDayRecord)">
+                    <input type="checkbox" id="input1" onchange="save(this.id, this.checked, myDayRecord)">
                     <label for="input1">আলহামদুলিল্লাহ।</label>
                 </div>
             </article>
@@ -309,21 +60,21 @@
             <article class="info-card hadith-theme">
                 <div class="card-icon">📜</div>
                 <h2>আজকের হাদিস</h2>
-                <p class="arabic-text">الصِّيَامُ جُنَّةٌ</p>
-                <p class="translation">রোজা হচ্ছে (জাহান্নামের আগুন থেকে বাঁচার) ঢালস্বরূপ।</p>
-                 <div class="checkbox-container">
-                    <input type="checkbox" name="input2" id="input2" onchange="save( this.id, this.checked, myDayRecord)">
+                <p class="arabic-text">الصِّيَامُ جُنَّةٌ</p>
+                <p class="translation">রোজা হচ্ছে জাহান্নামের আগুন থেকে বাঁচার ঢালস্বরূপ।</p>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="input2" onchange="save(this.id, this.checked, myDayRecord)">
                     <label for="input2">আলহামদুলিল্লাহ।</label>
                 </div>
             </article>
 
             <article class="info-card dua-theme">
                 <div class="card-icon">🤲</div>
-                <h2>আজকের দোয়া</h2>
-                <p class="arabic-text">اللَّهُمَّ لَكَ صُمْتُ وَعَلَى رِزْقِكَ أَفْطَرْتُ</p>
-                <p class="translation">হে আল্লাহ, আমি আপনার জন্যই রোজা রেখেছি এবং আপনার দেয়া রিযিক দিয়েই ইফতার করছি।</p>
-                 <div class="checkbox-container">
-                    <input type="checkbox" name="input3" id="input3" onchange="save( this.id, this.checked, myDayRecord)">
+                <h2>আজকের দোয়া</h2>
+                <p class="arabic-text">اللَّهُمَّ لَكَ صُمْتُ وَعَلَى رِزْقِكَ أَفْطَرْتُ</p>
+                <p class="translation">হে আল্লাহ, আমি আপনার জন্যই রোজা রেখেছি...</p>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="input3" onchange="save(this.id, this.checked, myDayRecord)">
                     <label for="input3">আলহামদুলিল্লাহ।</label>
                 </div>
             </article>
@@ -331,341 +82,65 @@
             <article class="info-card deed-theme">
                 <div class="card-icon">🌟</div>
                 <h2>আজকের ভালো কাজ</h2>
-                <p class="deed-text">Feed a fasting person today, even if it's just with a glass of water or a single date.</p>
-                 <div class="checkbox-container">
-                    <input type="checkbox" name="input4" id="input4" onchange="save( this.id, this.checked, myDayRecord)">
+                <p class="deed-text">আজ অন্তত একজনকে ইফতার করান অথবা পানি পান করান।</p>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="input4" onchange="save(this.id, this.checked, myDayRecord)">
                     <label for="input4">আলহামদুলিল্লাহ</label>
                 </div>
             </article>
         </section>
 
-        <!--Dynamic User generated data fields this today-->
         <section class="user-traker-container">
-            <style></style>
             <h2 class="main-title">📊 আপনার আজকের অগ্রগতি</h2>
-            <div class="tracker-grid"></div>
+            
+            <section class="tracker-card">
+                <label for="input5">আজকের বিশেষ অর্জন</label>
+                <input type="text" id="input5" placeholder="আজকে যা ভালো করেছেন..." onblur="save(this.id, this.value, myDayRecord)">
+            </section>
 
-                <!--আজকের অর্জন-->
-                <section class="tracker-card">
-                    <div>
-                        <label for="input5">আজকের বিশেষ অর্জন</label>
-                        <input type="text" id="input5" name="input5" placeholder="আজকে ৫ জন মানুষকে সাহায্য করেছি..." onblur="save( this.id, this.value, myDayRecord)">
-                    </div>
+            <section class="tracker-card prayer-grid">
+                <p>(নামাজের ইনপুটগুলো এখানে বসান...)</p>
+            </section>
+
+            <h2>কুরআন ট্র্যাকার</h2>
+            <section class="tracker-card">
+                <div>
+                    <label for="input22">আয়াত</label>
+                    <input type="number" id="input22" onblur="save(this.id, this.value, myDayRecord)">
+                </div>
+                <div>
+                    <label for="input23">পৃষ্ঠা</label>
+                    <input type="number" id="input23" onblur="save(this.id, this.value, myDayRecord)">
+                </div>
+                <div>
+                    <label for="input24">পারা</label>
+                    <input type="number" id="input24" onblur="save(this.id, this.value, myDayRecord)">
+                </div>
+            </section>
+
+            <section class="checklist">
+                <div>
+                    <input type="checkbox" id="input25" onchange="save(this.id, this.checked, myDayRecord)">
+                    <label for="input25">সকালের যিক্র।</label>
+                </div>
                 </section>
-
-                <!--Pray tracker-->
-                <section class="tracker-card">
-                        <!--ফজর-->
-                        <label for="fojor-section">ফজর</label>
-                        <section id="fojor-section">
-                            <!--ফরজ-->
-                            <div>
-                                <label for="input6">ফরজ</label>
-                                <input type="number" id="input6" name="input6"  onblur="save( this.id, this.value, myDayRecord)">
-                            </div>
-                            <!--সুন্নাত-->
-                            <div>
-                                <label for="input7">সুন্নত</label>
-                                <input type="number" id="input7" name="input7"  onblur="save( this.id, this.value, myDayRecord)">
-                            </div>
-                        </section>
-
-
-                            <!--যুহর-->
-                        <label for="zohor-section">যুহর</label>
-                        <section id="zohor-section">
-                            <div>
-                                <label for="input8">ফরজ</label>
-                                <input type="number" id="input8" name="input8"  onblur="save( this.id, this.value, myDayRecord)">
-                            </div>
-                            <!--সুন্নাত-->
-                            <div>
-                                <label for="input9">সুন্নত</label>
-                                <input type="number" id="input9" name="input9"  onblur="save( this.id, this.value, myDayRecord)">
-                            </div>
-                            <!--নফল-->
-                            <div>
-                                <label for="input10">নফল</label>
-                                <input type="number" id="input10" name="input10"  onblur="save( this.id, this.value, myDayRecord)">
-                            </div>
-                        </section>
-
-
-                        <!--আসর-->
-                            <label for="asor-section">আসর</label>
-                        <section id="asor-section">
-                            <div>
-                                <label for="input11">ফরজ</label>
-                                <input type="number" id="input11" name="input11"  onblur="save( this.id, this.value, myDayRecord)">
-                            </div>
-                            <!--সুন্নাত-->
-                            <div>
-                                <label for="input12">সুন্নত</label>
-                                <input type="number" id="input12" name="input12"  onblur="save( this.id, this.value, myDayRecord)">
-                            </div>
-                            
-                        </section>
-
-
-                            <!--মাগরিব-->
-                        <label for="magrib-section">মাগরিব</label>
-                        <section id="magrib-section">
-                            <div>
-                                <label for="input13">ফরজ</label>
-                                <input type="number" id="input13" name="input13"  onblur="save( this.id, this.value, myDayRecord)">
-                            </div>
-                            <!--সুন্নাত-->
-                            <div>
-                                <label for="input14">সুন্নত</label>
-                                <input type="number" id="input14" name="input14"  onblur="save( this.id, this.value, myDayRecord)">
-                            </div>
-                            <!--নফল-->
-                            <div>
-                                <label for="input15">নফল</label>
-                                <input type="number" id="input15" name="input15"  onblur="save( this.id, this.value, myDayRecord)">
-                            </div>
-                        </section>
-
-
-
-                        
-                            <!--isha-->
-                            <label for="isha-section">ইশা</label>
-                        <section id="isha-section">
-                            <div>
-                                <label for="input16">ফরজ</label>
-                                <input type="number" id="input16" name="input16"  onblur="save( this.id, this.value, myDayRecord)">
-                            </div>
-                            <!--সুন্নাত-->
-                            <div>
-                                <label for="input17">সুন্নত</label>
-                                <input type="number" id="input17" name="input17"  onblur="save( this.id, this.value, myDayRecord)">
-                            </div>
-                            <!--নফল-->
-                            <div>
-                                <label for="input18">নফল</label>
-                                <input type="number" id="input18" name="input18"  onblur="save( this.id, this.value, myDayRecord)">
-                            </div>
-                        </section>
-
-
-
-                            <!--তারাবীহ-->
-                        <label for="tarabih-section">তারাবীহ</label>
-                        <section id="tarabih-section">
-                            <!--সুন্নাত-->
-                            <div>
-                                <label for="input19">সুন্নত</label>
-                                <input type="number" id="input19" name="input19"  onblur="save( this.id, this.value, myDayRecord)">
-                            </div>
-                        </section>
-
-
-                            <!--দ্বুহা-->
-                        <label for="dhuha-section">দ্বুহা</label>
-                        <section id="dhuha-section">
-                            <!--সুন্নাত-->
-                            <div>
-                                <label for="input20">সুন্নত</label>
-                                <input type="number" id="input20" name="input20"  onblur="save( this.id, this.value, myDayRecord)">
-                            </div>
-                        </section>
-
-
-
-                            <!--দুখুলুল মসজিল/ তাহিয়্বাতুল ওদ্বু-->
-                        <label for="dukhul-section">দুখুলুল মসজিল/ তাহিয়্বাতুল ওদ্বু</label>
-                        <section id="dukhul-section">
-                            <!--সুন্নাত-->
-                            <div>
-                                <label for="input21">সুন্নত</label>
-                                <input type="number" id="input21" name="input21"  onblur="save( this.id, this.value, myDayRecord)">
-                            </div>
-                        </section>
-
-                </section>
-
-                <!--Quran Tracker-->
-                <h2>কুরআন ট্র্যাকার</h2>
-                <section class="tracker-card">
-                    <div>
-                        <label for="toady-ayah">আয়াত</label>
-                        <input type="number" id="input22" name="input22" onblur="save( this.id, this.value, myDayRecord)">
-                    </div>
-                    <div>
-                        <label for="input23">পৃষ্ঠা</label>
-                        <input type="number" id="input23" name="input23" onblur="save( this.id, this.value, myDayRecord)">
-                    </div>
-                    <div>
-                        <label for="input24">পারা</label>
-                        <input type="number" id="input24" name="input24" onblur="save( this.id, this.value, myDayRecord)">
-                    </div>
-                </section>
-
-                <!-- Daily Check List -->
-                <section class="checklist">
-                    <div>
-                        <input type="checkbox" id="input25" name="input25"  onchange="save( this.id, this.checked, myDayRecord)">
-                        <label for="input25">সকালের যিক্র।</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="input26" name="input26"  onchange="save( this.id, this.checked, myDayRecord)">
-                        <label for="input26">সন্ধ্যার যিক্র।</label>
-                    </div>
-                     <div>
-                        <input type="checkbox" id="input27" name="input27"  onchange="save( this.id, this.checked, myDayRecord)">
-                        <label for="input27">দান সদাকা।</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="input28" name="input28"  onchange="save( this.id, this.checked, myDayRecord)">
-                        <label for="input28">দিনের কাজ।</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="input29" name="input29"  onchange="save( this.id, this.checked, myDayRecord)">
-                        <label for="input29">কমপক্ষে ৭০ বার ইস্তেগফার।</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="input30" name="input30"  onchange="save( this.id, this.checked, myDayRecord)">
-                        <label for="input30">কুরআন তিলাওয়াত ও তাদাব্বুর</label>
-                    </div>
-
-                    <div>
-                        <input type="checkbox" id="input31" name="input31"  onchange="save( this.id, this.checked, myDayRecord)">
-                        <label for="input31">ঘুমের পূর্বের যিক্র।</label>
-                    </div>
-                     
-                    <div>
-                        <input type="checkbox" id="input32" name="input32"  onchange="save( this.id, this.checked, myDayRecord)">
-                        <label for="input32">দিনের দু'আ মুখস্থ।</label>
-                    </div>
-                     <div>
-                        <input type="checkbox" id="input33" name="input33"  onchange="save( this.id, this.checked, myDayRecord)">
-                        <label for="input33n">আল্লাহর নাম মুখস্থ।</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="input34" name="input34"  onchange="save( this.id, this.checked, myDayRecord)">
-                        <label for="input34">জামাআতে সালাত আদায়।</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="input35" name="input35"  onchange="save( this.id, this.checked, myDayRecord)">
-                        <label for="input35">নতুন কিছু শেখা।</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="input36" name="input36"  onchange="save( this.id, this.checked, myDayRecord)">
-                        <label for="input36">দিনের হাদীস।</label>
-                    </div>
-                </section>
-            </div>
-
         </section>
 
-        <!--আল্লাহর নাম সমূহ-->
         <section class="names-of-allah">
-            <style>
-                .names-of-allah{
-                }
-            </style>
-            <div>
-                <h1>আল্লাহর নাম</h1>
-            </div>
-            <!--1-->
-            <div>
-                <p class="arabic-text">আরবীতে</p>
-                <p class="translation">বাংলাতে</p>
-                <div class="checkbox-container">
-                    <input type="checkbox" name="input37" id="input37" onchange="save( this.id, this.checked, myDayRecord)">
-                    <label for="input37">আলহামদুলিল্লাহ।</label>
-                </div>
-            </div>
-            <!--2-->
-            <div>
-                <p class="arabic-text">আরবীতে</p>
-                <p class="translation">বাংলাতে</p>
-                <div class="checkbox-container">
-                    <input type="checkbox" name="input38" id="input38" onchange="save( this.id, this.checked, myDayRecord)">
-                    <label for="input38">আলহামদুলিল্লাহ।</label>
-                </div>
-            </div>
-            <!--3-->
-            <div>
-                 <p class="arabic-text">আরবীতে</p>
-                <p class="translation">বাংলাতে</p>
-                <div class="checkbox-container">
-                    <input type="checkbox" name="input39" id="input39" onchange="save( this.id, this.checked, myDayRecord)">
-                    <label for="input39">আলহামদুলিল্লাহ।</label>
-                </div>
+            <h1>আল্লাহর নাম</h1>
+            <div class="name-item">
+                <p class="arabic-text">আর-রাহমান</p>
+                <p class="translation">পরম দয়ালু</p>
+                <input type="checkbox" id="input37" onchange="save(this.id, this.checked, myDayRecord)">
             </div>
         </section>
-
-
-
-        <!--Data save and retrive from local storage-->
-    <script>
-        let myDayRecordString =  localStorage.getItem("myDayRecord");
-        let myDayRecord;
-        if(!myDayRecordString){
-            myDayRecord = {
-                headers:{
-                    user:{
-                        name:'',
-                        phone:'',
-                        email: '',
-                        age: 0,
-                        address: ''
-                    },
-                    ramadan: {
-                        englishDate: '',
-                        banglaDate: '',
-                        arabicDate: '',
-                        nthRamadhan: ''
-                    }
-                },
-                body: {
-                    input1: false, input2: false, input3:false, input4:false, input5:0, input6:0, input7:0, input8:0, input9:0, input10:0, input11:0, input12:0, input13:0, input14:0, input15:0, input16:0, input17:0, input18:0, input19:0, input20:0, input21:0, input22:false, input23:false, input24:false, input25:false, input26:false, input27:false, input28:false, input29:false, input30:false, input31:false, input32:false, input33:false, input34:false, input35:false, input36:false, input37:false, input38:false, input29:false
-            }
-             }
-        } else {
-            myDayRecord = JSON.parse(myDayRecordString);
-            displayMyDayRecord(myDayRecord);
-        }
-        //Function to sanve form datas to local storage
-        function save(id, data, record){
-            record.body[id]= data;
-            localStorage.setItem("myDayRecord", JSON.stringify(record));
-            console.log(`myDayRecord:  `, record)
-        }
-
-        //Function to display data 
-        function displayMyDayRecord(record){
-            console.log("Record: ", record.body)
-            Object.entries(record.body).forEach(([id, value]) =>{
-                const input  = document.getElementById(id);
-                if(input){
-                    input.type === 'checkbox' ? input.checked = value : input.value = value;
-                }
-            })
-        }
-
-
-    </script>
-
-
-
 
     </main>
 
-    <!--Footer section -->
-   <footer>
-        <style>
-          
-
-            footer a {
-                color: var(--primary);
-                text-decoration: none;
-            }
-        </style>
-        <p>&copy; 2026 Ramadhan Tracker | Built by  <a href="https://www.facebook.com/profile.php?id=61556331160348"><strong>Smart BD Production</strong></a></p>
+    <footer>
+        <p>&copy; 2026 Ramadhan Tracker | Built by <a href="#"><strong>Smart BD Production</strong></a></p>
     </footer>
 
+    <script src="public/static_files/js/index.js"></script>
 </body>
 </html>

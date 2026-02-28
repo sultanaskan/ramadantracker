@@ -1,0 +1,82 @@
+/* Reset */
+* { box-sizing: border-box; }
+
+body {
+    margin: 0; padding: 0;
+    font-family: 'Hind Siliguri', sans-serif;
+    width: 100vw; 
+    height: 100vh;
+    display: flex; 
+    flex-direction: column;
+    overflow: hidden; /* পুরো পেজে স্ক্রলবার থাকবে না */
+    background: #f0f4f1;
+}
+
+header {
+    flex: 1; /* ১ ভাগ জায়গা */
+    min-height: 0; /* ফ্লেক্স বক্সের জন্য জরুরি */
+    background: #052101; 
+    color: white; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-around;
+}
+
+main { 
+    flex: 18; /* ১৮ ভাগ জায়গা - সবচাইতে বড় হবে */
+    display: flex; 
+    flex-direction: column; 
+    background: rgba(255,255,255,0.8);
+    border: black 2px solid;
+    margin: 5px; 
+    padding: 5px;
+    overflow-y: auto; /* কন্টেন্ট বেশি হলে শুধু এখানে স্ক্রল হবে */
+    scrollbar-width: none; /* Firefox */
+}
+main::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+
+footer { 
+    flex: 1; /* ১ ভাগ জায়গা */
+    min-height: 0;
+    background: #003206; 
+    color: #888; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+/* মেইন এর ভেতরের সেকশনগুলোর স্টাইল */
+main > section {
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 10px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main > section > 
+
+/* ফ্লেক্স রেশিও অনুযায়ী সেকশনগুলোর সাইজ */
+main > section:nth-child(1) { flex: 1; }
+main > section:nth-child(2) { flex: 3; }
+main > section:nth-child(3) { flex: 5; }
+main > section:nth-child(4) { flex: 8; }
+main > section:nth-child(5) { flex: 3; }
+
+/* Ticker Animation */
+.ticker-wrapper {
+    overflow: hidden; 
+    background: #e0e0e0;
+    white-space: nowrap;
+}
+.ticker-text { 
+    display: inline-block; 
+    animation: scroll-left 30s linear infinite; 
+    font-size: 14px; 
+}
+@keyframes scroll-left { 
+    0% { transform: translateX(100%); } 
+    100% { transform: translateX(-100%); } 
+}
