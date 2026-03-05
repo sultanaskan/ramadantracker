@@ -21,11 +21,11 @@ const fullFormatter = new Intl.DateTimeFormat('en-u-ca-islamic-umalqura', option
 const hijriFull = fullFormatter.format(today);
 
 //Update your HTML tags
-document.getElementById('hijri-day').innerHTML = hijriDayInBangla + 'তম  রমজান ';
+document.getElementById('hijri-day').innerHTML = hijriDayInBangla + ' তম  রমজান ';
 document.getElementById('full-hijri').innerHTML = hijriFull;
 document.getElementById('full-hijri').value = hijriFull;
 
-console.log(`today: ${today} \n hijriDay: ${hijriDay } \n DayFormater: ${JSON.stringify(dayFormatter)} \n fullFormater: ${ JSON.stringify(fullFormatter)} \n User Time Zone: ${userTimeZone}`);
+//console.log(`today: ${today} \n hijriDay: ${hijriDay } \n DayFormater: ${JSON.stringify(dayFormatter)} \n fullFormater: ${ JSON.stringify(fullFormatter)} \n User Time Zone: ${userTimeZone}`);
 
 
 

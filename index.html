@@ -2,24 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Ramadan planner is a platform for planning days of ramadan. Learn a single ayah of al-Quran evry day. Learn a single hadis evry day. Do a single good work every day. Track recorod of amol every day of ramadan. It help to make a productive days in month of ramadan for muslim ummah. | রমাদান প্লেনার হলো মুসলিম উম্মার জন্য রমাদানের এক প্রডাক্টিভ টূল। রামাদান প্লেনার মুসলিম উম্মার রমদানে দৈনিক আমলের ট্র্যাক রেকর্ড রাখে এবং প্রতিদিন ইসলামিক জ্ঞ্যান বৃদ্ধি করতে সাহায্য করে। রমাদান প্লেনার প্রতিদিন একটি করে অর্থ সহ কুরআনের আয়াত। একটি করে হাদিস। ও কমপক্ষে একটি করে ভালো কাজ করতে সাহায্য করে। এটি মুসলিম উম্মার দৈনিক কাজকে অর্থবহ করতে সাহায্য করে।">
+    <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="public/static_files/image/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="public/static_files/css/index.css">
-    <title>Ramadhan Tracker 2026</title>
+   <link rel="stylesheet" href="public/static_files/css/index.css">
+    <title>Ramadhan Planner 2026 | রমাদান প্লেনার ২০২৬</title>
 </head>
 
-<body>
+<body class="flex-container">
     <header>
-        <h3>🌙 Ramadhan Tracker 2026</h3>
+        <h3 style="font-size: 1rem; margin: 0px; padding: 0px;">🌙 Ramadhan Planner 2026</h3>
         <div class="auth-buttons">
             <button>Login</button>
             <button>Logout</button>
         </div>
     </header>
 
-    <main>                         
-        <section class="ticker-wrapper" id="ticker-wapper">
+    <main class="flex-container">                         
+        <section  class="ticker-wrapper fex-container" id="ticker-wapper">
             <h3 class="ticker-text">
                 <strong>ঘোষণাঃ</strong> এটি একটি ওপেন সোর্স প্রজেক্ট। মুসলিম উম্মার খেদমতে তৈরি হয়েছে। 
                 প্রজেক্টের কাজ এখনো চলমান ৫ই রমজানের মধ্যে ব্যাবহারের জন্য উন্মোক্ত করে দেয়া হবে ইনশাল্লাহ। 
@@ -30,105 +32,221 @@
             </h3>
         </section>
 
-        <section class="ramadhan-widget" id="ramadhan-widget">
-            <div>
-                <h2>সেহেরির শেষ সময়</h2>
-                <p>ভোর ৪ টা ৪০ মিনিটে</p>
+        <section class="ramadhan-widget flex-container"  id="ramadhan-widget">
+            <div >
+                <p class="" >10:50:30</p>
+                <h2 >সেহেরির বাকি সময় (<span>04:30 </span> AM)</h2>
             </div>
             <div>
+                <p id="full-hijri" class="sub-date"></p>
                 <h2>আজ <span id="hijri-day" class="highlight">...</span></h2>
-                <span id="full-hijri" class="sub-date"></span>
             </div>
             <div>
-                <h2>ইফতারের শেষ সময়</h2>
-                <p>সন্ধ্যা ৪ টা ৪০ মিনিটে</p>
+                <p>06:30:10</p>
+                 <h2>ইফতারের  বাকি সময় (<span>5:30</span> PM) </h2>
             </div>
         </section> 
 
-        <section class="daily-inspiration">
-            <article class="info-card ayah-theme">
-                <div class="card-icon">📖</div>
-                <h2>আজকের আয়াত</h2>
-                <p class="arabic-text">يَا أَيُّهَا الَّذِينَ آمَنُوا كُتِبَ عَلَيْكُمُ الصِّيَامُ</p>
-                <p class="translation">হে ঈমানদারগণ, তোমাদের উপর রোজা ফরয করা হয়েছে।</p>
-                <div class="checkbox-container">
+        <section class="daily-inspiration grid-container">
+            <article class="iitm info-card ayah-theme">
+                <div class="card-head">
+                    <h2>আজকের আয়াত</h2>
+                </div>
+                <div class="card-body">
+                     <p class="arabic-text">يَا أَيُّهَا الَّذِينَ آمَنُوا كُتِبَ عَلَيْكُمُ الصِّيَامُ</p>
+                    <p class="translation">হে ঈমানদারগণ, তোমাদের উপর রোজা ফরয করা হয়েছে।</p>
+                </div>
+               <div class="checkbox-container card-action">
                     <input type="checkbox" id="input1" onchange="save(this.id, this.checked, myDayRecord)">
                     <label for="input1">আলহামদুলিল্লাহ।</label>
                 </div>
             </article>
 
-            <article class="info-card hadith-theme">
-                <div class="card-icon">📜</div>
-                <h2>আজকের হাদিস</h2>
-                <p class="arabic-text">الصِّيَامُ جُنَّةٌ</p>
-                <p class="translation">রোজা হচ্ছে জাহান্নামের আগুন থেকে বাঁচার ঢালস্বরূপ।</p>
-                <div class="checkbox-container">
+            <article class="iitm info-card hadith-theme">
+                <div class="card-head">
+                    <h2>আজকের হাদিস</h2>
+                </div>
+                <div class="card-body">
+                        <p class="arabic-text">الصِّيَامُ جُنَّةٌ</p>
+                    <p class="translation">রোজা হচ্ছে জাহান্নামের আগুন থেকে বাঁচার ঢালস্বরূপ।</p>
+                </div>
+               <div class="checkbox-container card-action">
                     <input type="checkbox" id="input2" onchange="save(this.id, this.checked, myDayRecord)">
                     <label for="input2">আলহামদুলিল্লাহ।</label>
                 </div>
             </article>
 
-            <article class="info-card dua-theme">
-                <div class="card-icon">🤲</div>
-                <h2>আজকের দোয়া</h2>
-                <p class="arabic-text">اللَّهُمَّ لَكَ صُمْتُ وَعَلَى رِزْقِكَ أَفْطَرْتُ</p>
-                <p class="translation">হে আল্লাহ, আমি আপনার জন্যই রোজা রেখেছি...</p>
-                <div class="checkbox-container">
+            <article class="iitm info-card dua-theme">
+                <div class="card-head">
+                     <h2 style="margin: 0px; line-height: 1.2;">আজকের দোয়া</h2>
+                </div>
+                <div class="card-body">
+                    <p style="margin: 0px; line-height: 1.2;" class="arabic-text">اللَّهُمَّ لَكَ صُمْتُ وَعَلَى رِزْقِكَ أَفْطَرْتُ</p>
+                    <p style="margin: 0px; line-height: 1.2;" class="translation">হে আল্লাহ, আমি আপনার জন্যই রোজা রেখেছি...</p>
+                </div>
+                <div class="checkbox-container card-action">
                     <input type="checkbox" id="input3" onchange="save(this.id, this.checked, myDayRecord)">
                     <label for="input3">আলহামদুলিল্লাহ।</label>
                 </div>
             </article>
 
-            <article class="info-card deed-theme">
-                <div class="card-icon">🌟</div>
-                <h2>আজকের ভালো কাজ</h2>
-                <p class="deed-text">আজ অন্তত একজনকে ইফতার করান অথবা পানি পান করান।</p>
-                <div class="checkbox-container">
+            <article  class="iitm info-card deed-theme">
+                <div class="card-head">
+                    <h2 style="margin: 0px; line-height: 1.2;">আজকের ভালো কাজ</h2>
+                </div>
+                <div class="card-body">
+                      <p style="margin: 0px; line-height: 1.2;" class="deed-text">আজ অন্তত একজনকে ইফতার করান অথবা পানি পান করান।</p>
+                </div>
+                <div class="checkbox-container card-action">
                     <input type="checkbox" id="input4" onchange="save(this.id, this.checked, myDayRecord)">
                     <label for="input4">আলহামদুলিল্লাহ</label>
                 </div>
             </article>
         </section>
 
-        <section class="user-traker-container">
-            <h2 class="main-title">📊 আপনার আজকের অগ্রগতি</h2>
+        <section class="user-traker-container  flex-container">
+            <section class="salat-tracker">
+                <table >
+                    <caption>নামাজের ট্র্যাকার</caption>
+
+                    <thead>
+                        <tr>
+                            <th>ওয়াক্ত</th>
+                            <th>ফরজ</th>
+                            <th>সুন্নত</th>
+                            <th>নফল</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td >ফজর</td> 
+                            <td ><input type="number" min="0" max="99" id="input22" onblur="save(this.id, this.value, myDayRecord)"></td> 
+                            <td ><input type="number" min="0" max="99" id="input22" onblur="save(this.id, this.value, myDayRecord)"></td> 
+                            <td ><input type="number" min="0" max="99" id="input22" onblur="save(this.id, this.value, myDayRecord)"></td> 
+                        </tr>
+                        <tr>
+                            <td >ফজর</td> 
+                            <td ><input type="number" min="0" max="99" id="input22" onblur="save(this.id, this.value, myDayRecord)"></td> 
+                            <td ><input type="number" min="0" max="99" id="input22" onblur="save(this.id, this.value, myDayRecord)"></td> 
+                            <td ><input type="number" min="0" max="99" id="input22" onblur="save(this.id, this.value, myDayRecord)"></td> 
+                        </tr>
+                         <tr>
+                            <td >ফজর</td> 
+                            <td ><input type="number" min="0" max="99" id="input22" onblur="save(this.id, this.value, myDayRecord)"></td> 
+                            <td ><input type="number" min="0" max="99" id="input22" onblur="save(this.id, this.value, myDayRecord)"></td> 
+                            <td ><input type="number" min="0" max="99" id="input22" onblur="save(this.id, this.value, myDayRecord)"></td> 
+                        </tr>
+                        <tr>
+                            <td >ফজর</td> 
+                            <td ><input type="number" min="0" max="99" id="input22" onblur="save(this.id, this.value, myDayRecord)"></td> 
+                            <td ><input type="number" min="0" max="99" id="input22" onblur="save(this.id, this.value, myDayRecord)"></td> 
+                            <td ><input type="number" min="0" max="99" id="input22" onblur="save(this.id, this.value, myDayRecord)"></td> 
+                        </tr>
+                         <tr>
+                            <td >ফজর</td> 
+                            <td ><input type="number" min="0" max="99" id="input22" onblur="save(this.id, this.value, myDayRecord)"></td> 
+                            <td ><input type="number" min="0" max="99" id="input22" onblur="save(this.id, this.value, myDayRecord)"></td> 
+                            <td ><input type="number" min="0" max="99" id="input22" onblur="save(this.id, this.value, myDayRecord)"></td> 
+                        </tr>
+                        <tr>
+                            <td >ফজর</td> 
+                            <td ><input type="number" min="0" max="99" id="input22" onblur="save(this.id, this.value, myDayRecord)"></td> 
+                            <td ><input type="number" min="0" max="99" id="input22" onblur="save(this.id, this.value, myDayRecord)"></td> 
+                            <td ><input type="number" min="0" max="99" id="input22" onblur="save(this.id, this.value, myDayRecord)"></td> 
+                        </tr>
+                       
+                    </tbody>                    
+                </table>
+            </section>
             
-            <section class="tracker-card">
-                <label for="input5">আজকের বিশেষ অর্জন</label>
-                <input type="text" id="input5" placeholder="আজকে যা ভালো করেছেন..." onblur="save(this.id, this.value, myDayRecord)">
-            </section>
-
-            <section class="tracker-card prayer-grid">
-                <p>(নামাজের ইনপুটগুলো এখানে বসান...)</p>
-            </section>
-
-            <h2>কুরআন ট্র্যাকার</h2>
-            <section class="tracker-card">
-                <div>
-                    <label for="input22">আয়াত</label>
-                    <input type="number" id="input22" onblur="save(this.id, this.value, myDayRecord)">
-                </div>
-                <div>
-                    <label for="input23">পৃষ্ঠা</label>
-                    <input type="number" id="input23" onblur="save(this.id, this.value, myDayRecord)">
-                </div>
-                <div>
-                    <label for="input24">পারা</label>
-                    <input type="number" id="input24" onblur="save(this.id, this.value, myDayRecord)">
-                </div>
+            
+            <section class="salat-&-good-deed-container">
+                
+                <section class="quran-tracker">
+                    <table>
+                        <caption>কুরআন ট্র্যাকার</caption>
+                        <thead>
+                            <th>আয়াত</th>
+                            <th>পৃষ্ঠা</th>
+                            <th>পারা</th>
+                        </thead>
+                        <tbody>
+                                <tr>
+                                    <td><input type="number" min="0" max="999" id="input22" onblur="save(this.id, this.value, myDayRecord)"></td> 
+                                    <td><input type="number" min="0" max="999" id="input23" onblur="save(this.id, this.value, myDayRecord)"></td> 
+                                    <td><input type="number" min="0" max="999" id="input24" onblur="save(this.id, this.value, myDayRecord)"></td> 
+                                </tr>
+                        </tbody>
+                    </table>    
+                </section>
+                <br>
+                <br>
+                <section class="good-deed-tracker">
+                    <label for="input5">আজকের বিশেষ অর্জন</label><br>
+                    <textarea  type="text" id="input5" cols="12" placeholder="আজকে যা ভালো করেছেন..." onblur="save(this.id, this.value, myDayRecord)">
+                    </textarea>
+                </section>
             </section>
 
             <section class="checklist">
-                <div>
-                    <input type="checkbox" id="input25" onchange="save(this.id, this.checked, myDayRecord)">
-                    <label for="input25">সকালের যিক্র।</label>
-                </div>
-                </section>
+               <h3>আজকের কাজ</h3>
+                <input type="checkbox" id="input25" onchange="save(this.id, this.checked, myDayRecord)">
+                <label for="input25">সকালের যিক্র।</label>
+                <br>
+                 <input type="checkbox" id="input25" onchange="save(this.id, this.checked, myDayRecord)">
+                <label for="input25">সকালের যিক্র।</label>
+                   
+                <br>
+                 <input type="checkbox" id="input25" onchange="save(this.id, this.checked, myDayRecord)">
+                <label for="input25">সকালের যিক্র।</label>
+                 
+                <br>
+                 <input type="checkbox" id="input25" onchange="save(this.id, this.checked, myDayRecord)">
+                <label for="input25">সকালের যিক্র।</label>
+                 
+                <br>
+                 <input type="checkbox" id="input25" onchange="save(this.id, this.checked, myDayRecord)">
+                <label for="input25">সকালের যিক্র।</label>
+                 
+                <br>
+                 <input type="checkbox" id="input25" onchange="save(this.id, this.checked, myDayRecord)">
+                <label for="input25">সকালের যিক্র।</label>
+                 
+                <br>
+                 <input type="checkbox" id="input25" onchange="save(this.id, this.checked, myDayRecord)">
+                <label for="input25">সকালের যিক্র।</label>
+                 
+                <br>
+                 <input type="checkbox" id="input25" onchange="save(this.id, this.checked, myDayRecord)">
+                <label for="input25">সকালের যিক্র।</label>
+                 
+                <br>
+                 <input type="checkbox" id="input25" onchange="save(this.id, this.checked, myDayRecord)">
+                <label for="input25">সকালের যিক্র।</label>
+                 
+                <br>
+                 <input type="checkbox" id="input25" onchange="save(this.id, this.checked, myDayRecord)">
+                <label for="input25">সকালের যিক্র।</label>
+                 
+                
+            </section>
         </section>
 
-        <section class="names-of-allah">
-            <h1>আল্লাহর নাম</h1>
+        <section class="names-of-allah flex-container">
+            <caption>আল্লাহর নাম</caption>
             <div class="name-item">
+                <p class="arabic-text">আর-রাহমান</p>
+                <p class="translation">পরম দয়ালু</p>
+                <input type="checkbox" id="input37" onchange="save(this.id, this.checked, myDayRecord)">
+            </div>
+             <div class="name-item">
+                <p class="arabic-text">আর-রাহমান</p>
+                <p class="translation">পরম দয়ালু</p>
+                <input type="checkbox" id="input37" onchange="save(this.id, this.checked, myDayRecord)">
+            </div>
+
+              <div class="name-item">
                 <p class="arabic-text">আর-রাহমান</p>
                 <p class="translation">পরম দয়ালু</p>
                 <input type="checkbox" id="input37" onchange="save(this.id, this.checked, myDayRecord)">
@@ -137,8 +255,8 @@
 
     </main>
 
-    <footer>
-        <p>&copy; 2026 Ramadhan Tracker | Built by <a href="#"><strong>Smart BD Production</strong></a></p>
+    <footer >
+       <p> &copy; 2026 Ramadhan Planner | Built by <a style="text-decoration: none; color: wheat;" href="https://www.facebook.com/profile.php?id=61556331160348"><strong> Smart BD Production</strong></a></p>
     </footer>
 
     <script src="public/static_files/js/index.js"></script>
