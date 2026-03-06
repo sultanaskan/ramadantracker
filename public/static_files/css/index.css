@@ -2,18 +2,40 @@
 * { box-sizing: border-box; }
 
 input{
-    width: 30px;
+    width: 50px;
+    border-radius: 10px;
     text-align: center;
+    color: white;
+    background-color: transparent;
 }
+textarea{
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: large;
+     background-color: transparent;
+     color: white;  
+}
+label{
+    white-space: nowrap;
+}
+
 
 
 body {
     margin: 0; padding: 0;
-    background: #f0f4f1;
+    background:  linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/public/static_files/image/background-image.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     text-align: center;
     font-family: 'Hind Siliguri', sans-serif;
-    font-size: 1.5vw; /* টেক্সটবুকের মতো দেখাতে সাইজ একটু বড় রাখা ভালো */
+    font-size: 3vw; /* টেক্সটবুকের মতো দেখাতে সাইজ একটু বড় রাখা ভালো */
     line-height: 1.6;
+    color: white;
+    
 }
 .flex-container{
     display: flex;
@@ -31,14 +53,18 @@ body {
         display: grid;
         grid-template-columns: repeat(4, 1fr); /* ৪টি কলাম */
         grid-template-rows: auto; /* ৩টি সারি */
-        gap: 0.0005rem; /* গ্রিড আইটেমের মধ্যে ফাঁকা জায়গা */
-        padding: 0.05rem; /* গ্রিড আইটেমের ভিতরের প্যাডিং */;
+        gap: 0.3rem; /* গ্রিড আইটেমের মধ্যে ফাঁকা জায়গা */
+        padding: 0.5rem; /* গ্রিড আইটেমের ভিতরের প্যাডিং */;
         width: 100%;
-        height: 100%;
-        background: rgba(202, 247, 187, 0.8);
+        height: 100%; color: white;
 }
 
-.item{
+.item{ 
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 3rem;
+    margin: 3rem;
+    overflow: hidden;
 
 }
 
@@ -46,7 +72,6 @@ header {
     flex: 1; /* ১ ভাগ জায়গা */
     min-height: 0; /* ফ্লেক্স বক্সের জন্য জরুরি */
     background: #052101; 
-    color: white; 
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -58,7 +83,6 @@ header {
 
 main { 
     flex: 18; /* ১৮ ভাগ জায়গা - সবচাইতে বড় হবে */
-    background: rgba(255,255,255,0.8);
     border: black 2px solid;
     margin: 0.05rem; 
     padding: 0.05rem;
@@ -68,7 +92,6 @@ footer {
     flex: 1; /* ১ ভাগ জায়গা */
     min-height: 0;
     background: #003206; 
-    color: #888; 
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -80,16 +103,17 @@ footer {
 
 /* মেইন এর ভেতরের সেকশনগুলোর স্টাইল */
 main > section {
+    overflow: hidden;
     margin: 0.05rem;
     padding: 0.05rem;
-}
+    }
 
 
 /* ফ্লেক্স রেশিও অনুযায়ী সেকশনগুলোর সাইজ */
-main > section:nth-child(1) { flex: 0.0005; flex-direction: row;}
+main > section:nth-child(1) { flex: 0.0005; flex-direction: row; display: none;}
 main > section:nth-child(2) { flex: 2; flex-direction: row;  }
-main > section:nth-child(3) { flex: 5;  flex-direction: row; }
-main > section:nth-child(4) { flex: 8; flex-direction: row; }
+main > section:nth-child(3) { flex: 5;  flex-direction: row;  }
+main > section:nth-child(4) { flex: 8; flex-direction: column;  }
 main > section:nth-child(5) { flex: 3;  flex-direction: row;}
 
 
@@ -121,6 +145,9 @@ main > section:nth-child(5) { flex: 3;  flex-direction: row;}
 }
 
 .ramadhan-widget > div{
+    backdrop-filter: blur(30px);
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
 }
 .ramadhan-widget > div > p {
     margin: 0px;
@@ -130,24 +157,86 @@ main > section:nth-child(5) { flex: 3;  flex-direction: row;}
 }
 .ramadhan-widget > div > h2{
     margin: 0px; 
-    font-size: 2vw; 
+    font-size: 1vw; 
     line-height: 1; 
     font-weight: normal;
 }
 
-
+.daily-inspiration{
+    overflow-x: auto;
+    gap: 15px;
+    padding: 10px;
+    -webkit-overflow-scrolling: touch;
+    background: linear-gradient(rgba(10, 66, 3, 0.822), rgba(1, 81, 105, 0.953));
+    box-shadow:  0 0 100px rgba(11, 0, 0, 0.5);
+}
+.daily-inspiration.flex-container::-webkit-scrollbar{
+    display: none;
+}
+.daily-inspiration > .info-card{
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    height: 100%;
+}
 .daily-inspiration  >.info-card > .card-head > h2{
     margin: 0px; line-height: 1.2;
+    background-color: rgba(128, 0, 0, 0.237);
+    opacity: 0.4;
 }
 .daily-inspiration  > .info-card > .card-body > p{
     margin: 0px; line-height: 1.2; 
+}
+.daily-inspiration > .info-card > .card-action{
+    margin: 0px; line-height: 1.2; 
+    background-color: rgba(128, 0, 0, 0.237);
+    opacity: 0.4;
 }
 
 
 .user-traker-container{
     flex-shrink: 1;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    width: 100%;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
 }
 
+.user-traker-container > .salat-tracker{
+    text-align: left;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+}
+.user-traker-container > .quran-and-good-deed-container{
+    padding: 20px;
+    margin: 20px;
+    width: 100%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+} 
+
+
+.checklist{
+    width: 100%;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    font-size: large;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+    text-align: left;
+    padding-left: 20px;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+  }
 
 
 @media screen and (max-width: 600px) {
@@ -159,12 +248,14 @@ main > section:nth-child(5) { flex: 3;  flex-direction: row;}
 
 
     body {
+        font-size: 3vw;
     }
     .flex-container{
     }
 
     .grid-container{
-        grid-template-columns: repeat(2, 1fr); /* মোবাইলের জন্য ২টি কলাম */
+        grid-template-columns: repeat(1, 1fr); /* মোবাইলের জন্য ২টি কলাম */
+        grid-template-rows: repeat(1, 1fr)
     }
     header {
     }
@@ -196,9 +287,7 @@ main > section:nth-child(5) { flex: 3;  flex-direction: row;}
     }
     .ticker-text { 
     }
-    @keyframes scroll-left {    
-
-     }
+   
 
     .info-card{
     }
@@ -207,7 +296,10 @@ main > section:nth-child(5) { flex: 3;  flex-direction: row;}
         
     }
     .ramadhan-widget > div > p {
-        font-size: 15px;
+        font-size: 5vw;
+    }
+     .ramadhan-widget > div > p:nth-child(2) {
+        font-size: 1vw;
     }
     .ramadhan-widget > div > h2{
         font-size: 8px;

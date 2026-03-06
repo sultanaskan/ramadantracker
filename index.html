@@ -47,8 +47,8 @@
             </div>
         </section> 
 
-        <section class="daily-inspiration grid-container">
-            <article class="iitm info-card ayah-theme">
+        <section class="daily-inspiration flex-container">
+            <article class="item info-card ayah-theme">
                 <div class="card-head">
                     <h2>আজকের আয়াত</h2>
                 </div>
@@ -62,7 +62,7 @@
                 </div>
             </article>
 
-            <article class="iitm info-card hadith-theme">
+            <article class="item info-card hadith-theme">
                 <div class="card-head">
                     <h2>আজকের হাদিস</h2>
                 </div>
@@ -76,7 +76,7 @@
                 </div>
             </article>
 
-            <article class="iitm info-card dua-theme">
+            <article class="item info-card dua-theme">
                 <div class="card-head">
                      <h2 style="margin: 0px; line-height: 1.2;">আজকের দোয়া</h2>
                 </div>
@@ -90,7 +90,7 @@
                 </div>
             </article>
 
-            <article  class="iitm info-card deed-theme">
+            <article  class="item info-card deed-theme">
                 <div class="card-head">
                     <h2 style="margin: 0px; line-height: 1.2;">আজকের ভালো কাজ</h2>
                 </div>
@@ -105,6 +105,8 @@
         </section>
 
         <section class="user-traker-container  flex-container">
+            
+
             <section class="salat-tracker">
                 <table >
                     <caption>নামাজের ট্র্যাকার</caption>
@@ -161,8 +163,14 @@
             </section>
             
             
-            <section class="salat-&-good-deed-container">
+            <section class="quran-and-good-deed-container">
                 
+                <section class="good-deed-tracker">
+                    <label for="input5">আজকের বিশেষ অর্জন</label><br>
+                    <textarea  type="text" id="input5" cols="12" placeholder="আজকে যা ভালো করেছেন..." onblur="save(this.id, this.value, myDayRecord)">
+                    </textarea>
+                </section>
+
                 <section class="quran-tracker">
                     <table>
                         <caption>কুরআন ট্র্যাকার</caption>
@@ -180,55 +188,55 @@
                         </tbody>
                     </table>    
                 </section>
-                <br>
-                <br>
-                <section class="good-deed-tracker">
-                    <label for="input5">আজকের বিশেষ অর্জন</label><br>
-                    <textarea  type="text" id="input5" cols="12" placeholder="আজকে যা ভালো করেছেন..." onblur="save(this.id, this.value, myDayRecord)">
-                    </textarea>
-                </section>
             </section>
 
-            <section class="checklist">
+            <section  class="checklist">
                <h3>আজকের কাজ</h3>
                 <input type="checkbox" id="input25" onchange="save(this.id, this.checked, myDayRecord)">
-                <label for="input25">সকালের যিক্র।</label>
+                <label for="input25">সকালের যিকির</label>
                 <br>
-                 <input type="checkbox" id="input25" onchange="save(this.id, this.checked, myDayRecord)">
-                <label for="input25">সকালের যিক্র।</label>
+                 <input type="checkbox" id="input26" onchange="save(this.id, this.checked, myDayRecord)">
+                <label for="input26">সন্ধ্যার যিকির</label>
                    
                 <br>
-                 <input type="checkbox" id="input25" onchange="save(this.id, this.checked, myDayRecord)">
-                <label for="input25">সকালের যিক্র।</label>
+                 <input type="checkbox" id="input27" onchange="save(this.id, this.checked, myDayRecord)">
+                <label for="input27">দান সদাকা</label>
                  
                 <br>
-                 <input type="checkbox" id="input25" onchange="save(this.id, this.checked, myDayRecord)">
-                <label for="input25">সকালের যিক্র।</label>
+                 <input type="checkbox" id="input28" onchange="save(this.id, this.checked, myDayRecord)">
+                <label for="input28">দিনের কাজ</label>
                  
                 <br>
-                 <input type="checkbox" id="input25" onchange="save(this.id, this.checked, myDayRecord)">
-                <label for="input25">সকালের যিক্র।</label>
+                 <input type="checkbox" id="input29" onchange="save(this.id, this.checked, myDayRecord)">
+                <label for="input29">৭০ বার ইস্তেগফার</label>
                  
                 <br>
-                 <input type="checkbox" id="input25" onchange="save(this.id, this.checked, myDayRecord)">
-                <label for="input25">সকালের যিক্র।</label>
+                 <input type="checkbox" id="input30" onchange="save(this.id, this.checked, myDayRecord)">
+                <label for="input30">কুরআন পাঠ</label>
                  
                 <br>
-                 <input type="checkbox" id="input25" onchange="save(this.id, this.checked, myDayRecord)">
-                <label for="input25">সকালের যিক্র।</label>
+                 <input type="checkbox" id="input31" onchange="save(this.id, this.checked, myDayRecord)">
+                <label for="input31">ঘুমের আগের দোয়া</label>
                  
                 <br>
-                 <input type="checkbox" id="input25" onchange="save(this.id, this.checked, myDayRecord)">
-                <label for="input25">সকালের যিক্র।</label>
+                 <input type="checkbox" id="input32" onchange="save(this.id, this.checked, myDayRecord)">
+                <label for="input32">দিনের দোয়া মুখস্ত</label>
                  
                 <br>
-                 <input type="checkbox" id="input25" onchange="save(this.id, this.checked, myDayRecord)">
-                <label for="input25">সকালের যিক্র।</label>
+                 <input type="checkbox" id="input33" onchange="save(this.id, this.checked, myDayRecord)">
+                <label for="input33">আল্লাহর নাম মুখস্ত</label>
                  
-                <br>
-                 <input type="checkbox" id="input25" onchange="save(this.id, this.checked, myDayRecord)">
-                <label for="input25">সকালের যিক্র।</label>
-                 
+                 <br>
+                 <input type="checkbox" id="input34" onchange="save(this.id, this.checked, myDayRecord)">
+                <label for="input34">জামাতে সালাত আদায়</label>
+
+                 <br>
+                 <input type="checkbox" id="input35" onchange="save(this.id, this.checked, myDayRecord)">
+                <label for="input35">নতুন কিছু শেখা</label>
+                 <br>
+                 <input type="checkbox" id="input36" onchange="save(this.id, this.checked, myDayRecord)">
+                <label for="input36">দিনের হাদিস মুখস্ত</label>
+                
                 
             </section>
         </section>

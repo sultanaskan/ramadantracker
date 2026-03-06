@@ -31,6 +31,7 @@ input fields info:
 22= quran-ayat,
 23= quran-page,
 24= quran-para,
+
 25= sokal-zikr,
 26= sondha-zikr,
 27= dan-sadaka,
